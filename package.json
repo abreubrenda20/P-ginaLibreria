@@ -1,0 +1,22 @@
+{
+  "name": "libreria",
+  "version": "1.0.0",
+  "description": "página de libros y cómics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abreubrenda20/P-ginaLibreria.git"
+  },
+  "author": "Brenda Abreu y Eduardo Piña",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abreubrenda20/P-ginaLibreria/issues"
+  },
+  "homepage": "https://github.com/abreubrenda20/P-ginaLibreria#readme",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}
