@@ -4,12 +4,18 @@
   "description": "página de libros y cómics",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass src/scss:dist/css",
+    "dev": "gulp dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abreubrenda20/P-ginaLibreria.git"
   },
+  "keywords": [
+    "SASS",
+    "NMP",
+    "Gulp"
+  ],
   "author": "Brenda Abreu y Eduardo Piña",
   "license": "ISC",
   "bugs": {
@@ -19,6 +25,6 @@
   "devDependencies": {
     "gulp": "^5.0.1",
     "gulp-sass": "^6.0.1",
-    "sass": "^1.89.2"
+    "sass": "^1.90.0"
   }
 }
