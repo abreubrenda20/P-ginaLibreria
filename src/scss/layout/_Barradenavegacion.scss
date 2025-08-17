@@ -1,4 +1,6 @@
+/* Importando el archivo de variables para usarlo con la letra V  */
+@use 'base/variables' as v; 
 .menu{
-    background-color: aquamarine;
-    
+    background-color: v.$button;
+
 }
