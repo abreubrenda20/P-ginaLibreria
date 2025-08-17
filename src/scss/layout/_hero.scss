@@ -1,0 +1,42 @@
+.hero{
+    margin: auto;
+    margin-top: 7rem;
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 500px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0));
+    }
+
+    .pagina{
+        width: 50%;
+        padding: 40px;
+    }
+    .pagina-izq{
+        background: #faf9f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .pagina-der{
+        background: #fdfcf7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: justify;
+    }
+}
