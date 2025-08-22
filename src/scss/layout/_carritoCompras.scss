@@ -1,0 +1,47 @@
+.compras{
+    margin: auto;
+    .contenedor-compras{
+        margin: 2rem;
+        border: 2px solid;
+        padding: 1rem;
+        display: flex;
+        gap: 1rem;
+        width: 94%;
+        .image-compra{
+            width: 20%;
+            height: 30vh;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .info-compra{
+            width: 60%;
+            display: flex;
+            padding: 1rem;
+            align-items: center;
+            gap: 2rem;
+            .info1{
+                width: 30%;
+                .contendeor-cant{
+                    display: flex;
+                    .cant{
+                        padding: .4rem;
+                        width: 60px;
+                        border: 2px solid;
+                        font-size: 24px;
+                        font-weight: 800;
+                    }
+                    .num{
+                         padding: .4rem;
+                        border: 2px solid;
+                        width: 50px;
+                    }
+                }
+            }
+            .info2{
+
+            }
+        }
+    }
+}
