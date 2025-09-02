@@ -1,47 +1,68 @@
+@use 'base/variables' as v;
 .compras{
-    margin: auto;
+    h2{
+        text-align: center;
+    }
     .contenedor-compras{
         margin: 2rem;
         border: 2px solid;
         padding: 1rem;
         display: flex;
-        gap: 1rem;
-        width: 94%;
+        width: 93%;
+        max-height: 210px;
         .image-compra{
-            width: 20%;
-            height: 30vh;
+            width: 15%;
+            height: 32vh;
             img{
                 width: 100%;
                 height: 100%;
             }
         }
         .info-compra{
-            width: 60%;
+            width: 100%;
             display: flex;
             padding: 1rem;
             align-items: center;
             gap: 2rem;
             .info1{
-                width: 30%;
+                padding: .8rem;
+                width: 60%;
+                
+                h3{
+                    margin: 0;
+                    padding: 0;
+                }
+
+                }
+                .info2{
+                    width: 40%;
+                    padding: .8rem;
+                    
+                }
                 .contendeor-cant{
-                    display: flex;
-                    .cant{
+                    width: 30%;
+                
+                    input{
+                        width: 100%;
+                        border-color: v.$button ;
                         padding: .4rem;
-                        width: 60px;
-                        border: 2px solid;
-                        font-size: 24px;
-                        font-weight: 800;
                     }
-                    .num{
-                        padding: .4rem;
-                        border: 2px solid;
-                        width: 50px;
+                }
+                .logo-borrar{
+                    width: 30%;
+
+                    display: flex;
+
+                    justify-content: center;
+                    svg{
+                        width: 28px;
+                        height: 30px;
+                        cursor: pointer;
+                        &:hover{
+                            color: v.$button;
+                        }
                     }
                 }
             }
-            .info2{
-
-            }
         }
     }
-}

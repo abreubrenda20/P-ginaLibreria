@@ -1,3 +1,4 @@
+@use 'base/variables' as v;
 .titulo-nuevo{
     margin: auto;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
@@ -18,24 +19,56 @@
     gap: 1rem;
     .contenedor-card{
         width: 90%;
+        height: auto;        
         border: 2px solid;
         padding: 1rem;
+        box-shadow: 4px 4px 1px .1px ;
+        border-radius: 10px;
         .cont-nuevo{
             display: flex;
             width: 100%;
-            gap: 2rem;
+            gap: 1rem;
             .img-nuevo{
-                width: 60%;
-                height: 50%;
+                width: 50%;
                 margin-bottom: 10px;
                 img{
                     width: 100%;
-                    height: 250px;
+                    height: 180px;
+                    border-radius: 10px;
+                }
+            }
+            .info-nuevo{
+                width: 50%;
+                h3{
+                    margin: 0;
+                    padding: 0;
+                }
+                p{
+                    font-size: 18px;
                 }
             }
         }
         .btns-nuevo{
             display: flex;
+            align-content: center;
         }
+        
     }
 }
+.btn-card{
+    min-width: 100px;
+    max-width: 120px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 12px 16px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #00bf63;
+    cursor: pointer;
+    margin: auto;
+    transition: all .8s ease;
+    &:hover{
+        background-color: v.$buttonHover;
+    }
+}
+
