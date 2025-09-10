@@ -1,0 +1,21 @@
+[
+    {
+        "ID": 1,
+        "Nombre":"It",
+        "Autor": "Stephen King",
+        "ISBN": "9780450411434",
+        "Precio": 520.00,
+        "Descuento" : 20,
+        "Sinopsis" : "En el pueblo de Derry, un grupo de niños enfrenta a una entidad maligna que toma la forma de sus peores miedos, especialmente un payaso.",
+        "No.Paginas": 1504,
+        "Editorial" : "Penguin Random House",
+        "Categoria" : "Terror",
+        "Año edicion" : "2019",
+        "img": "img/libros-Terror/it.webp",
+        "alt": "Imagen libro It"
+    },
+    {
+        "ID": 2,
+        "Nombre" : "Expediente Hermes"
+    }
+]
