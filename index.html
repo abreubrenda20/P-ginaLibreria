@@ -96,31 +96,39 @@
         </div>
     </section>
  <!-- Menú de las categorias  --> 
- <section class="Categorias">
-  <div class="imagen de fondo ">
-    <img src="/P-ginaLibreria/img/biblioteca/lib.jpg" alt="Fondo imagen">
-  </div>
+    <section class="Categorias">
+    <div class="imagen de fondo ">
+        <img src="/P-ginaLibreria/img/biblioteca/lib.jpg" alt="Fondo imagen">
+    </div>
 
-  <div class="menu-container">
-    <input type="checkbox" id="toggle">
-    <label for="toggle" class="menu-button">Categorías</label>
+    <div class="menu-container">
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="menu-button">Categorías</label>
 
-    <ul class="menu">
-      <li>Todos</li>
-      <li>Terror</li>
-      <li>Fantasía</li>
-      <li>Literatura</li>
-      <li>Románticos</li>
-      <li>Ciencia Ficción</li>
-    </ul>
-  </div>
+        <ul class="menu">
+            <!-- Data tex debe ser igul al nombre del json -->
+        <li class="btn-catalogo" data-text="Todos" >Todos</li>
+        <li class="btn-catalogo" data-text="Terror" >Terror</li>
+        <li class="btn-catalogo" data-text="Fantasía" >Fantasía</li>
+        <li class="btn-catalogo" data-text="Literatura" >Literatura</li>
+        <li class="btn-catalogo" data-text="Ciencia" >Ciencia</li>
+        <li class="btn-catalogo" data-text="Romance" >Románticos</li>
+        <li class="btn-catalogo" data-text="Ciencia-Ficción" >Ciencia Ficción</li>
+        </ul>
+    </div>
 </section>
+<div class="seccion-nuevo"  id="catalogoPrincipal">     
+</div>
+
+<!-- Diseñando el modal -->
+<div class="cont-modal" id="modal">
+    
+</div>
+
     <!-- Creando seccion lo más nuevo -->
     <div class="titulo-nuevo">
         <h2>Lo más nuevo</h2>
     </div>
-    <section class="seccion-nuevo"  id="catalogoPrincipal">     
-    </section>
     <!-- Seccion descuento -->
     <section class="descuento" id="section-descuento">
     <h1>Bienvenido a nuestros descuentos del mes de septiembre 2025</h1>

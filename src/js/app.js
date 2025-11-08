@@ -1,6 +1,11 @@
 let todosLosLibros=[];
 //variable para pagina comic
 const paneles = document.querySelectorAll('.opPanel');
+const modal = document.getElementById('modal');
+
+
+
+
 
 //variables carrucel
 
@@ -83,6 +88,15 @@ function obtenerJSON(){
     .then(libros=>{
         todosLosLibros=libros;
         mostrarLibros(libros, 'catalogoPrincipal')
+        //agregando eventos a los botones
+        document.querySelectorAll('.btn-catalogo').forEach(btn=>{
+            btn.addEventListener('click', ()=>{
+                console.log("clic en boton")
+                const Categoria = btn.dataset.text;
+                filtrarLibros(Categoria);
+                
+            })
+        })
     })
     .catch(error=> console.error('Error cargando el JSON de Libros', error))
 }
@@ -123,9 +137,20 @@ function crearTarjetaCatalogo(libros){
 
     const btn = document.createElement('button');
     btn.classList.add('btn-card')
-    btn.textContent= "Más"
+    
+    btn.textContent= "Más";
+    
+
     info.appendChild(cont_btn);
     cont_btn.appendChild(btn);
+    // Mostrar el modal
+    btn.addEventListener('click', () => {
+        
+        modal.classList.add('show');
+        console.log("hola ")
+        crearModal(libros, 'modal');
+    });
+
 
     const cont_btn2= document.createElement('div');
     cont_btn2.classList.add('btns-nuevo');
@@ -156,6 +181,91 @@ function crearTarjetaCatalogo(libros){
     cont_btn2.appendChild(btn2);
 
     return tarjeta;
+
+}
+
+function filtrarLibros(Categoria){
+    const contenedor = document.getElementById('catalogoPrincipal');
+    contenedor.innerHTML="";
+    let filtrados;
+    if(Categoria ==="Todos"){
+        filtrados=todosLosLibros;
+
+    }else{
+        //Realiza el filtrado de libros
+        filtrados=todosLosLibros.filter(l=> l.Categoria===Categoria);
+    }
+    mostrarLibros(filtrados,'catalogoPrincipal');
+
+}
+
+//Creando el modal
+function crearModal(libros, idmodal){
+    const contenedor_modal = document.getElementById(idmodal);
+     contenedor_modal.innerHTML = ""; //Limpia antes de crear
+    contenedor_modal.innerHTML = 
+    `<div class="btn-cerrar" id="btn-cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+        </svg>
+    </div>
+    <div class="info1">
+        <div class="cont-img">
+            <img src="${libros.img}" alt="${libros.alt}">
+        </div>
+        <div class="cont-info">
+            <h1>${libros.Nombre}</h1>
+            <h2> <span>Precio:</span>  ${libros.Precio}</h2>
+            <h2> <span>Descuento:</span>  ${libros.Descuento} %</h2>
+            <h2>  <span>Categoria:</span>  ${libros.Categoria}</h2>
+        </div>
+    </div>
+    <div class="info2">
+        <div class="cont-btn">
+            <button class="btn" id="btn-info">Información</button>
+            <button class="btn" id="btn-sinop">Sinopsis</button>
+        </div>
+        <div class="info-detallada">
+            <div class="seccion-info">
+                <p class="parrafo-info"><span>Autor:</span>  ${libros.Autor}</p>
+                <p class="parrafo-info"> <span>ISBN:</span>  ${libros.ISBN}</p>
+                <p class="parrafo-info"> <span>No. de páginas:</span>  ${libros["No.Paginas"]}</p>
+                <p class="parrafo-info"> <span>Editorial:</span>  ${libros.Editorial}</p>
+                <p class="parrafo-info"> <span>Año de edición:</span>  ${libros["Año de edición"]}</p>
+            </div>
+            <div class="seccion-sinop"> 
+                <p class="parrafo-sinop">${libros.Sinopsis}</p>
+            </div>
+        </div>
+    </div>`;
+    const btnCerrar = document.querySelector('#btn-cerrar');
+    // Cerrar modal al hacer clic en el botón de cerrar
+    btnCerrar.addEventListener('click', () => {
+        modal.classList.remove('show');
+    });
+
+    //Mostrar info o sinopsis
+
+    const btnInfo= contenedor_modal.querySelector('#btn-info');
+    const btnSinop= contenedor_modal.querySelector('#btn-sinop');
+    const seccionInfo= contenedor_modal.querySelector('.seccion-info');
+    const seccionSinop= contenedor_modal.querySelector('.seccion-sinop');
+    //Mi estado inicial
+    seccionInfo.style.display='block';
+    seccionSinop.style.display='none';
+    btnInfo.addEventListener('click', () => {
+        seccionInfo.style.display = 'block';
+        seccionSinop.style.display = 'none';
+        btnInfo.classList.add('active');
+        btnSinop.classList.remove('active');
+    });
+
+    btnSinop.addEventListener('click', () => {
+        seccionInfo.style.display = 'none';
+        seccionSinop.style.display = 'block';
+        btnSinop.classList.add('active');
+        btnInfo.classList.remove('active');
+    });
 
 }
 
