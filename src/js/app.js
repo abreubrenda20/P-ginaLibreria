@@ -1,11 +1,7 @@
-let todosLosLibros=[];
+let todosLosLibros = [];
 //variable para pagina comic
 const paneles = document.querySelectorAll('.opPanel');
 const modal = document.getElementById('modal');
-
-
-
-
 
 //variables carrucel
 
@@ -13,41 +9,43 @@ let atras = document.getElementById('atras');
 let adelante = document.getElementById('delante');
 let imagen = document.getElementById('img');
 let texto = document.getElementById('texto');
-let actual=0;
-let sucursales=[];
-function obtenerJSONSucursal(){
+let actual = 0;
+let sucursales = [];
+function obtenerJSONSucursal() {
     fetch('data/sucursales.json')
-    //regresa una promesa
-    .then(responde=>responde.json())
-    .then(tiendas=>{
-        sucursales=tiendas;
-        mostrarSucursal();
-
-        atras.addEventListener('click', ()=>{
-        actual-=1;
-        if(actual==-1){
-            actual=sucursales.length-1;
-        }
-        mostrarSucursal();
-        });
-
-        adelante.addEventListener('click', ()=>{
-            actual+=1;
-            if(actual==sucursales.length){
-                actual=0;
-            }
+        //regresa una promesa
+        .then((responde) => responde.json())
+        .then((tiendas) => {
+            sucursales = tiendas;
             mostrarSucursal();
-        });
-    })
-    .catch(error=> console.error('Error cargando el JSON de sucursales', error))
+
+            atras.addEventListener('click', () => {
+                actual -= 1;
+                if (actual == -1) {
+                    actual = sucursales.length - 1;
+                }
+                mostrarSucursal();
+            });
+
+            adelante.addEventListener('click', () => {
+                actual += 1;
+                if (actual == sucursales.length) {
+                    actual = 0;
+                }
+                mostrarSucursal();
+            });
+        })
+        .catch((error) =>
+            console.error('Error cargando el JSON de sucursales', error)
+        );
 }
 
-function mostrarSucursal(){
+function mostrarSucursal() {
     let s = sucursales[actual];
-    imagen.innerHTML=`
+    imagen.innerHTML = `
             <img src="${s.img}" alt="${s.alt}">
         `;
-        texto.innerHTML=`
+    texto.innerHTML = `
             <h2>${s.nombresucursa}</h2>
             <p>${s.direccion}</p>
             <p>${s.pais}</p>
@@ -59,105 +57,99 @@ function mostrarSucursal(){
         `;
 }
 
+paneles.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        // Si ya está activo y vuelves a hacer clic, no hagas nada
+        if (panel.classList.contains('active')) return;
 
-paneles.forEach(panel => {
-  panel.addEventListener('click', () => {
-    // Si ya está activo y vuelves a hacer clic, no hagas nada
-    if (panel.classList.contains('active')) return;
-
-    removeActivePanel(); // quita active de todos
-    panel.classList.add('active'); // agrega al clicado
-  });
+        removeActivePanel(); // quita active de todos
+        panel.classList.add('active'); // agrega al clicado
+    });
 });
 
-function removeActivePanel(){
-    paneles.forEach(panel=>{
+function removeActivePanel() {
+    paneles.forEach((panel) => {
         panel.classList.remove('active');
     });
 }
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
     obtenerJSON();
     obtenerJSONSucursal();
+});
 
-})
-
-function obtenerJSON(){
+function obtenerJSON() {
     fetch('data/libros.json')
-    //regresa una promesa
-    .then(responde=>responde.json())
-    .then(libros=>{
-        todosLosLibros=libros;
-        mostrarLibros(libros, 'catalogoPrincipal')
-        //agregando eventos a los botones
-        document.querySelectorAll('.btn-catalogo').forEach(btn=>{
-            btn.addEventListener('click', ()=>{
-                console.log("clic en boton")
-                const Categoria = btn.dataset.text;
-                filtrarLibros(Categoria);
-                
-            })
+        //regresa una promesa
+        .then((responde) => responde.json())
+        .then((libros) => {
+            todosLosLibros = libros;
+            mostrarLibros(libros, 'catalogoPrincipal');
+            //agregando eventos a los botones
+            document.querySelectorAll('.btn-catalogo').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    console.log('clic en boton');
+                    const Categoria = btn.dataset.text;
+                    filtrarLibros(Categoria);
+                });
+            });
         })
-    })
-    .catch(error=> console.error('Error cargando el JSON de Libros', error))
+        .catch((error) =>
+            console.error('Error cargando el JSON de Libros', error)
+        );
 }
 
-
-
-function mostrarLibros(libros, contenedorID){
-    const contenedor= document.getElementById(contenedorID);
-    libros.forEach(libros =>{
-        const tarjetaLibros= crearTarjetaCatalogo(libros);
+function mostrarLibros(libros, contenedorID) {
+    const contenedor = document.getElementById(contenedorID);
+    libros.forEach((libros) => {
+        const tarjetaLibros = crearTarjetaCatalogo(libros);
         contenedor.appendChild(tarjetaLibros);
     });
 }
 
-function crearTarjetaCatalogo(libros){
+function crearTarjetaCatalogo(libros) {
     const tarjeta = document.createElement('div');
     tarjeta.classList.add('contenedor-card');
     const nuevo = document.createElement('div');
     nuevo.classList.add('cont-nuevo');
     tarjeta.appendChild(nuevo);
-    const cont_img= document.createElement('div');
+    const cont_img = document.createElement('div');
     cont_img.classList.add('img-nuevo');
-    cont_img.innerHTML=`
+    cont_img.innerHTML = `
         <img src = "${libros.img}" alt = "${libros.alt}"/>
     `;
     nuevo.appendChild(cont_img);
 
     const info = document.createElement('div');
     info.classList.add('info-nuevo');
-    info.innerHTML= `
+    info.innerHTML = `
         <h3>${libros.Nombre}</h3>
         <p>${libros.Autor}</p>
         <p>$${libros.Precio}</p>
     `;
     nuevo.appendChild(info);
-    const cont_btn= document.createElement('div');
+    const cont_btn = document.createElement('div');
     cont_btn.classList.add('btns-nuevo');
 
     const btn = document.createElement('button');
-    btn.classList.add('btn-card')
-    
-    btn.textContent= "Más";
-    
+    btn.classList.add('btn-card');
+
+    btn.textContent = 'Más';
 
     info.appendChild(cont_btn);
     cont_btn.appendChild(btn);
     // Mostrar el modal
     btn.addEventListener('click', () => {
-        
         modal.classList.add('show');
-        console.log("hola ")
+        console.log('hola ');
         crearModal(libros, 'modal');
     });
 
-
-    const cont_btn2= document.createElement('div');
+    const cont_btn2 = document.createElement('div');
     cont_btn2.classList.add('btns-nuevo');
     const btn2 = document.createElement('button');
     btn2.classList.add('btn', 'btn-agregar');
-    btn2.innerHTML= `
+    btn2.innerHTML = `
         Agregar 
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" 
                 viewBox="0 0 16 16" class="icono">
@@ -182,8 +174,8 @@ function crearTarjetaCatalogo(libros){
     cont_btn2.appendChild(btn2);
 
     //Agregar evento al btn de agregar
-    btn2.addEventListener('click', ()=>{
-        let carrito =JSON.parse(localStorage.getItem('carrito')) || [];
+    btn2.addEventListener('click', () => {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
         //agregamos el libro donde estamos
         carrito.push(libros);
@@ -194,30 +186,26 @@ function crearTarjetaCatalogo(libros){
     });
 
     return tarjeta;
-
 }
 
-function filtrarLibros(Categoria){
+function filtrarLibros(Categoria) {
     const contenedor = document.getElementById('catalogoPrincipal');
-    contenedor.innerHTML="";
+    contenedor.innerHTML = '';
     let filtrados;
-    if(Categoria ==="Todos"){
-        filtrados=todosLosLibros;
-
-    }else{
+    if (Categoria === 'Todos') {
+        filtrados = todosLosLibros;
+    } else {
         //Realiza el filtrado de libros
-        filtrados=todosLosLibros.filter(l=> l.Categoria===Categoria);
+        filtrados = todosLosLibros.filter((l) => l.Categoria === Categoria);
     }
-    mostrarLibros(filtrados,'catalogoPrincipal');
-
+    mostrarLibros(filtrados, 'catalogoPrincipal');
 }
 
 //Creando el modal
-function crearModal(libros, idmodal){
+function crearModal(libros, idmodal) {
     const contenedor_modal = document.getElementById(idmodal);
-     contenedor_modal.innerHTML = ""; //Limpia antes de crear
-    contenedor_modal.innerHTML = 
-    `<div class="btn-cerrar" id="btn-cerrar">
+    contenedor_modal.innerHTML = ''; //Limpia antes de crear
+    contenedor_modal.innerHTML = `<div class="btn-cerrar" id="btn-cerrar">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
             <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
         </svg>
@@ -242,9 +230,9 @@ function crearModal(libros, idmodal){
             <div class="seccion-info">
                 <p class="parrafo-info"><span>Autor:</span>  ${libros.Autor}</p>
                 <p class="parrafo-info"> <span>ISBN:</span>  ${libros.ISBN}</p>
-                <p class="parrafo-info"> <span>No. de páginas:</span>  ${libros["No.Paginas"]}</p>
+                <p class="parrafo-info"> <span>No. de páginas:</span>  ${libros['No.Paginas']}</p>
                 <p class="parrafo-info"> <span>Editorial:</span>  ${libros.Editorial}</p>
-                <p class="parrafo-info"> <span>Año de edición:</span>  ${libros["Año de edición"]}</p>
+                <p class="parrafo-info"> <span>Año de edición:</span>  ${libros['Año de edición']}</p>
             </div>
             <div class="seccion-sinop"> 
                 <p class="parrafo-sinop">${libros.Sinopsis}</p>
@@ -259,13 +247,13 @@ function crearModal(libros, idmodal){
 
     //Mostrar info o sinopsis
 
-    const btnInfo= contenedor_modal.querySelector('#btn-info');
-    const btnSinop= contenedor_modal.querySelector('#btn-sinop');
-    const seccionInfo= contenedor_modal.querySelector('.seccion-info');
-    const seccionSinop= contenedor_modal.querySelector('.seccion-sinop');
+    const btnInfo = contenedor_modal.querySelector('#btn-info');
+    const btnSinop = contenedor_modal.querySelector('#btn-sinop');
+    const seccionInfo = contenedor_modal.querySelector('.seccion-info');
+    const seccionSinop = contenedor_modal.querySelector('.seccion-sinop');
     //Mi estado inicial
-    seccionInfo.style.display='block';
-    seccionSinop.style.display='none';
+    seccionInfo.style.display = 'block';
+    seccionSinop.style.display = 'none';
     btnInfo.addEventListener('click', () => {
         seccionInfo.style.display = 'block';
         seccionSinop.style.display = 'none';
@@ -279,40 +267,36 @@ function crearModal(libros, idmodal){
         btnSinop.classList.add('active');
         btnInfo.classList.remove('active');
     });
-
 }
 
 // ================================
 // SECCIÓN DE LA PÁGINA COMPRAS
-// ================================
-// SECCIÓN DE LA PÁGINA COMPRAS
 
 document.addEventListener('DOMContentLoaded', () => {
-  const compras = document.querySelector('.compras');
-  if (!compras) return;
+    const compras = document.querySelector('.compras');
+    if (!compras) return;
 
-  const contPago = compras.querySelector('.cont-pago');
-  const totalGeneralElem = contPago?.querySelector('p');
-
-  let lista = compras.querySelector('.lista-compras');
-  if (!lista) {
-    lista = document.createElement('div');
-    lista.className = 'lista-compras';
     const contPago = compras.querySelector('.cont-pago');
-    compras.insertBefore(lista, contPago || null);
-  }
+    const totalGeneralElem = contPago?.querySelector('p');
 
-  // Cargar carrito
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  lista.innerHTML = '';
+    let lista = compras.querySelector('.lista-compras');
+    if (!lista) {
+        lista = document.createElement('div');
+        lista.className = 'lista-compras';
+        const contPago = compras.querySelector('.cont-pago');
+        compras.insertBefore(lista, contPago || null);
+    }
 
-  carrito.forEach((libro, index) => {
-    const contenedor = document.createElement('div');
-    contenedor.classList.add('contenedor-compras');
+    // Cargar carrito
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    lista.innerHTML = '';
 
-    const precioUnitario = libro.Precio - (libro.Precio * libro.Descuento / 100);
-
-    contenedor.innerHTML = `
+    carrito.forEach((libro, index) => {
+        const contenedor = document.createElement('div');
+        contenedor.classList.add('contenedor-compras');
+        const precioUnitario =
+            libro.Precio - (libro.Precio * libro.Descuento) / 100;
+        contenedor.innerHTML = `
       <div class="compra-item">
         <div class="image-compra">
           <img src="${libro.img}" alt="${libro.alt}">
@@ -348,64 +332,66 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    contenedor.dataset.precioUnitario = precioUnitario;
-    contenedor.dataset.cantidad = 1;
-    lista.appendChild(contenedor);
-  });
-
-  // Función para calcular el total general
-  function calcularTotalGeneral() {
-    let total = 0;
-    lista.querySelectorAll('.contenedor-compras').forEach(cont => {
-      const precioUnitario = parseFloat(cont.dataset.precioUnitario);
-      const cantidad = parseInt(cont.dataset.cantidad);
-      total += precioUnitario * cantidad;
+        contenedor.dataset.precioUnitario = precioUnitario;
+        contenedor.dataset.cantidad = 1;
+        lista.appendChild(contenedor);
     });
-    if (totalGeneralElem) {
-      totalGeneralElem.textContent = `$${total.toFixed(2)}`;
+
+    // Función para calcular el total general
+    function calcularTotalGeneral() {
+        let total = 0;
+        lista.querySelectorAll('.contenedor-compras').forEach((cont) => {
+            const precioUnitario = parseFloat(cont.dataset.precioUnitario);
+            const cantidad = parseInt(cont.dataset.cantidad);
+            total += precioUnitario * cantidad;
+        });
+        if (totalGeneralElem) {
+            totalGeneralElem.textContent = `$${total.toFixed(2)}`;
+        }
     }
-  }
-
-  calcularTotalGeneral();
-
-  // 🔹 Cambio de cantidad
-  lista.addEventListener('input', (e) => {
-    const input = e.target.closest('.cantidad');
-    if (!input) return;
-
-    const cont = input.closest('.contenedor-compras');
-    const precioUnitario = parseFloat(cont.dataset.precioUnitario) || 0;
-    const cantidad = Math.max(1, parseInt(input.value) || 1);
-    cont.dataset.cantidad = cantidad;
-
-    if (input.max) {
-      const max = parseInt(input.max);
-      if (cantidad > max) input.value = max;
-    }
-
-    const nuevoTotal = precioUnitario * cantidad;
-    const totalElem = cont.querySelector('.total');
-    if (totalElem) totalElem.textContent = `Total: $${nuevoTotal.toFixed(2)}`;
 
     calcularTotalGeneral();
-  });
 
-  // 🔹 Borrar item (✅ ahora dentro del DOMContentLoaded)
-  lista.addEventListener('click', (e) => {
-    const btnBorrar = e.target.closest('.logo-borrar');
-    if (!btnBorrar) return;
+    // 🔹 Cambio de cantidad
+    lista.addEventListener('input', (e) => {
+        const input = e.target.closest('.cantidad');
+        if (!input) return;
 
-    const index = parseInt(btnBorrar.dataset.index);
-    if (Number.isFinite(index)) {
-      carrito.splice(index, 1);
-      localStorage.setItem('carrito', JSON.stringify(carrito));
+        const cont = input.closest('.contenedor-compras');
+        const precioUnitario = parseFloat(cont.dataset.precioUnitario) || 0;
+        const cantidad = Math.max(1, parseInt(input.value) || 1);
+        cont.dataset.cantidad = cantidad;
 
-      const nodo = btnBorrar.closest('.contenedor-compras');
-      if (nodo) nodo.remove();
+        if (input.max) {
+            const max = parseInt(input.max);
+            if (cantidad > max) input.value = max;
+        }
 
-      lista.querySelectorAll('.logo-borrar').forEach((el, i) => el.dataset.index = i);
-      calcularTotalGeneral();
-    }
-  });
+        const nuevoTotal = precioUnitario * cantidad;
+        const totalElem = cont.querySelector('.total');
+        if (totalElem)
+            totalElem.textContent = `Total: $${nuevoTotal.toFixed(2)}`;
 
+        calcularTotalGeneral();
+    });
+
+    // 🔹 Borrar item (✅ ahora dentro del DOMContentLoaded)
+    lista.addEventListener('click', (e) => {
+        const btnBorrar = e.target.closest('.logo-borrar');
+        if (!btnBorrar) return;
+
+        const index = parseInt(btnBorrar.dataset.index);
+        if (Number.isFinite(index)) {
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            const nodo = btnBorrar.closest('.contenedor-compras');
+            if (nodo) nodo.remove();
+
+            lista
+                .querySelectorAll('.logo-borrar')
+                .forEach((el, i) => (el.dataset.index = i));
+            calcularTotalGeneral();
+        }
+    });
 });

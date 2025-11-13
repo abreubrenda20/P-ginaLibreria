@@ -1,9 +1,9 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
-.titulo-nuevo{
+.titulo-nuevo {
     margin: auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
     width: 96%;
     height: 100px;
     text-align: center;
@@ -12,67 +12,62 @@
     align-items: center;
     margin-top: 2rem;
     border-radius: 20px;
-    
 }
-.seccion-nuevo{
+.seccion-nuevo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 2rem;
     gap: 1rem;
     /* Diseño responsivo */
-    @include m.tablet{
+    @include m.tablet {
         @include m.grid(2);
-        
-        
     }
 
-    @include m.telefono{
+    @include m.telefono {
         @include m.grid();
     }
-    .contenedor-card{
+    .contenedor-card {
         width: 90%;
-        height: auto;        
+        height: auto;
         border: 2px solid;
         padding: 1rem;
-        box-shadow: 4px 4px 1px .1px ;
+        box-shadow: 4px 4px 1px 0.1px;
         border-radius: 10px;
-        .cont-nuevo{
+        .cont-nuevo {
             display: flex;
             width: 100%;
             gap: 1rem;
-            .img-nuevo{
+            .img-nuevo {
                 width: 50%;
                 margin-bottom: 10px;
-                img{
+                img {
                     width: 100%;
                     height: 180px;
                     border-radius: 10px;
                 }
             }
-            .info-nuevo{
+            .info-nuevo {
                 width: 50%;
-                h3{
+                h3 {
                     margin: 0;
                     padding: 0;
                 }
-                p{
+                p {
                     font-size: 18px;
                 }
             }
         }
-        .btns-nuevo{
+        .btns-nuevo {
             display: flex;
             align-content: center;
             margin: auto;
         }
-        .btn-agregar{
-            
+        .btn-agregar {
             margin: auto;
         }
-        
     }
 }
-.btn-card{
+.btn-card {
     min-width: 100px;
     max-width: 120px;
     font-size: 16px;
@@ -83,9 +78,8 @@
     background-color: #00bf63;
     cursor: pointer;
     margin: auto;
-    transition: all .8s ease;
-    &:hover{
+    transition: all 0.8s ease;
+    &:hover {
         background-color: v.$buttonHover;
     }
 }
-

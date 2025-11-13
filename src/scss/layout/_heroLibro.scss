@@ -1,31 +1,31 @@
 @use 'base/variables' as v;
-.heroLibro{
+.heroLibro {
     margin: 2rem;
     height: 100vh;
     background: linear-gradient(90deg, #fff 50%, v.$sectionHero 50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    .libro{
+    .libro {
         display: flex;
         box-shadow: 5px 8px 5px #573701;
-        input{
+        input {
             display: none;
         }
-        .portada{
+        .portada {
             width: 450px;
             height: 500px;
-            img{
+            img {
                 width: 100%;
                 height: 100%;
             }
         }
-        .paginas{
+        .paginas {
             width: 450px;
             height: 500px;
             position: relative;
             perspective: 1500px;
-            .pagina-voltear{
+            .pagina-voltear {
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -36,7 +36,7 @@
                 transform: rotate(0deg);
                 transition: 2s;
                 color: #000;
-                .pagina-info{
+                .pagina-info {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -50,12 +50,14 @@
                     background-color: #fff;
                     box-sizing: border-box;
                     padding: 0 13px;
-                    box-shadow: inset 20px 0 50px rgba(0,0,0,0.5) 0 2px 5px rgba(0,0,0,0.5);
-                    h1,h3{
+                    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5) 0 2px 5px
+                        rgba(0, 0, 0, 0.5);
+                    h1,
+                    h3 {
                         color: v.$button;
                     }
                 }
-                .contraportada{
+                .contraportada {
                     width: 100%;
                     height: 100%;
                     position: absolute;
@@ -65,7 +67,7 @@
                     transform: rotateY(180deg);
                     backface-visibility: hidden;
                     background-color: #000;
-                    img{
+                    img {
                         width: 100%;
                         height: 100%;
                     }
@@ -74,7 +76,8 @@
         }
     }
 }
-.next-btn, .back-btn{
+.next-btn,
+.back-btn {
     position: absolute;
     bottom: 13px;
     right: 13px;
@@ -88,38 +91,38 @@
     width: 60px;
     transition: all 0.5s ease-in-out;
     text-align: center;
-    &:hover{
+    &:hover {
         border-radius: 12px;
         background-color: v.$buttonHover;
         color: white;
     }
 }
 
-#p1{
+#p1 {
     z-index: 4;
 }
-#p2{
+#p2 {
     z-index: 3;
 }
-#p3{
+#p3 {
     z-index: 2;
 }
-#p4{
+#p4 {
     z-index: 1;
 }
-#c1:checked ~ .paginas #p1{
+#c1:checked ~ .paginas #p1 {
     transform: rotateY(-180deg);
     z-index: 1;
 }
-#c2:checked ~ .paginas #p2{
+#c2:checked ~ .paginas #p2 {
     transform: rotateY(-180deg);
     z-index: 2;
 }
-#c3:checked ~ .paginas #p3{
+#c3:checked ~ .paginas #p3 {
     transform: rotateY(-180deg);
     z-index: 3;
 }
-#c4:checked ~ .paginas #p4{
+#c4:checked ~ .paginas #p4 {
     transform: rotateY(-180deg);
     z-index: 4;
 }

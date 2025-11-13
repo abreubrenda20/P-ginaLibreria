@@ -1,35 +1,35 @@
-    @use 'base/variables' as v;
-    
-    .footer {
+@use 'base/variables' as v;
+
+.footer {
     position: relative;
     background-color: #00000000; // el color café
     color: white;
     padding-top: 50px; // espacio para que no pise la curva
     text-align: center;
-    }
+}
 
-    .custom-shape-divider-top-1758579916 {
+.custom-shape-divider-top-1758579916 {
     position: absolute;
     top: -1px; // para que no quede un gap
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    }
+}
 
-    .custom-shape-divider-top-1758579916 svg {
+.custom-shape-divider-top-1758579916 svg {
     position: relative;
     display: block;
     width: calc(160% + 1.2px);
     height: 220px;
     z-index: -1;
-    }
+}
 
-    .custom-shape-divider-top-1758579916 .shape-fill {
-    fill: #8C705D; // mismo color del footer
-    }
+.custom-shape-divider-top-1758579916 .shape-fill {
+    fill: #8c705d; // mismo color del footer
+}
 
-    .contenido-footer {
+.contenido-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,52 +37,51 @@
     z-index: 10;
     position: relative;
 
-    .der{
-        p{
-            margin-top: 4.2rem; 
+    .der {
+        p {
+            margin-top: 4.2rem;
         }
     }
 
-    .redes{
+    .redes {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-right: 50px;
-        a{  
+        a {
             display: flex;
-            gap: .4rem;
+            gap: 0.4rem;
             margin-bottom: 10px;
             color: white;
             cursor: pointer;
-            &:hover{
+            &:hover {
                 text-decoration: underline;
-                
             }
 
-            svg{
+            svg {
                 color: v.$sectionNavBar;
             }
         }
-        .tiktok{
+        .tiktok {
             margin-right: 20px;
         }
     }
-    }
+}
 
-    .cont-logo {
-        margin-top: 2.5rem;
+.cont-logo {
+    margin-top: 2.5rem;
     .cont-image {
         img {
-        width: 40px; 
-        height: auto;
-        border-radius: 6px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            width: 40px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
     }
 
     h1 {
-        font-size: 20px; 
+        font-size: 20px;
         margin: 0;
     }
-    }
+}
