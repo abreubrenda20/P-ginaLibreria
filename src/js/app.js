@@ -3,6 +3,10 @@ let todosLosLibros = [];
 const paneles = document.querySelectorAll('.opPanel');
 const modal = document.getElementById('modal');
 
+//Variables para paginador
+let paginaActual = 1;
+const librosPorPagina = 8;
+
 //variables carrucel
 
 let atras = document.getElementById('atras');
@@ -101,10 +105,87 @@ function obtenerJSON() {
 
 function mostrarLibros(libros, contenedorID) {
     const contenedor = document.getElementById(contenedorID);
-    libros.forEach((libros) => {
+    contenedor.innerHTML = ``;
+    //calculando el inicio y fin de la visualizacion
+
+    const inicio = (paginaActual - 1) * librosPorPagina;
+    const fin = inicio + librosPorPagina;
+    const librosPagina = libros.slice(inicio, fin);
+
+    librosPagina.forEach((libros) => {
         const tarjetaLibros = crearTarjetaCatalogo(libros);
         contenedor.appendChild(tarjetaLibros);
     });
+    crearPaginador(libros, contenedorID);
+}
+
+function crearPaginador(libros, contenedorID) {
+    // eliminar paginador anterior si existe
+    let paginadorExistente = document.querySelector('.paginador');
+    if (paginadorExistente) paginadorExistente.remove();
+
+    const contenedor = document.getElementById(contenedorID);
+    const totalPaginas = Math.ceil(libros.length / librosPorPagina);
+
+    // si hay menos de una página, no crear paginador
+    if (totalPaginas <= 1) return;
+
+    const paginador = document.createElement('div');
+    paginador.classList.add('paginador');
+
+    // Botón anterior
+    const btnAnterior = document.createElement('button');
+    btnAnterior.textContent = 'Anterior';
+    btnAnterior.disabled = paginaActual === 1;
+    btnAnterior.addEventListener('click', () => {
+        if (paginaActual > 1) {
+            paginaActual--;
+            mostrarLibros(libros, contenedorID);
+            document.getElementById(contenedorID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    });
+    paginador.appendChild(btnAnterior);
+
+    // Botones numéricos
+    for (let i = 1; i <= totalPaginas; i++) {
+        const btnPagina = document.createElement('button');
+        btnPagina.textContent = i;
+        btnPagina.classList.add('numero-pagina');
+        if (i === paginaActual) btnPagina.classList.add('activo');
+
+        btnPagina.addEventListener('click', () => {
+            paginaActual = i;
+            mostrarLibros(libros, contenedorID);
+            document.getElementById(contenedorID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        });
+
+        paginador.appendChild(btnPagina);
+    }
+
+    // Botón siguiente
+    const btnSiguiente = document.createElement('button');
+    btnSiguiente.textContent = 'Siguiente';
+    btnSiguiente.disabled = paginaActual === totalPaginas;
+    btnSiguiente.addEventListener('click', () => {
+        if (paginaActual < totalPaginas) {
+            paginaActual++;
+            mostrarLibros(libros, contenedorID);
+            document.getElementById(contenedorID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    });
+    paginador.appendChild(btnSiguiente);
+
+    // ✅ Insertar justo debajo del catálogo
+    contenedor.insertAdjacentElement('afterend', paginador);
 }
 
 function crearTarjetaCatalogo(libros) {
@@ -191,6 +272,7 @@ function crearTarjetaCatalogo(libros) {
 function filtrarLibros(Categoria) {
     const contenedor = document.getElementById('catalogoPrincipal');
     contenedor.innerHTML = '';
+    paginaActual = 1;
     let filtrados;
     if (Categoria === 'Todos') {
         filtrados = todosLosLibros;

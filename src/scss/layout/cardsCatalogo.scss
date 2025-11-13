@@ -83,3 +83,37 @@
         background-color: v.$buttonHover;
     }
 }
+
+.paginador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+
+    button {
+        background-color: #8c705d;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+            background-color: darken(#8c705d, 10%);
+            transform: scale(1.05);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &.activo {
+            background-color: lighten(#8c705d, 10%);
+            font-weight: bold;
+            transform: scale(1.1);
+        }
+    }
+}

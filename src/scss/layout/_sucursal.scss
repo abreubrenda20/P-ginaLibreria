@@ -1,67 +1,116 @@
 @use 'base/variables' as v;
+
 .sucursales {
-    margin: 1rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+
     h1 {
         text-align: center;
-        margin: 0;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-weight: 700;
     }
+
     .cont-sucursal {
-        padding: 1rem;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
         align-items: center;
-        gap: 1rem;
+        justify-content: center;
+        gap: 1.5rem;
+        position: relative;
+
+        /* Botones de navegación */
         .atrasc,
         .adelante {
-            color: v.$button;
+            background: white;
+            border-radius: 50%;
+            padding: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
             cursor: pointer;
-            transition: color 0.8s ease;
+
             svg {
-                height: 40px; /* Altura deseada */
-                width: 40px;
+                color: v.$button;
+                width: 32px;
+                height: 32px;
             }
+
             &:hover {
-                color: v.$buttonHover;
+                background: v.$buttonHover;
+                svg {
+                    color: white;
+                }
+                transform: scale(1.08);
             }
         }
+
+        /* Carrusel */
         .carrucel {
-            width: 70%;
+            width: 80%;
             display: flex;
-            flex-direction: row;
-            gap: 1rem;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: box-shadow 0.4s ease;
+
+            &:hover {
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            }
 
             .cont-img {
                 width: 100%;
-                height: 80vh;
-                transition: width 1s ease-in;
+                height: 60vh;
+                transition: width 0.8s ease;
+
                 img {
                     width: 100%;
                     height: 100%;
+                    object-fit: cover;
                 }
             }
 
             .cont-info {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
-                overflow: hidden;
+                text-align: center;
+                background: #fafafa;
+                padding: 2rem;
                 opacity: 0;
                 width: 0;
-                transition: width 0.8s ease-in-out, opacity 1s ease-in;
-                overflow: hidden;
+                transition: width 0.9s ease-in-out, opacity 0.7s ease-in;
+
                 h2 {
-                    text-align: center;
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    margin: 0.4rem 0;
+                    color: #333;
+                }
+
+                a,
+                .email {
+                    margin-top: 1rem;
+                    font-size: 1.1rem;
+                    color: v.$button;
                 }
             }
+
+            /* Animación al hover */
             &:hover {
-                border: 1px solid black;
                 .cont-img {
-                    width: 70%;
+                    width: 65%;
                 }
                 .cont-info {
-                    width: 30%;
+                    width: 35%;
                     opacity: 1;
                 }
             }
