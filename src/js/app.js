@@ -79,6 +79,7 @@ function removeActivePanel(){
 document.addEventListener('DOMContentLoaded', function(){
     obtenerJSON();
     obtenerJSONSucursal();
+
 })
 
 function obtenerJSON(){
@@ -155,7 +156,7 @@ function crearTarjetaCatalogo(libros){
     const cont_btn2= document.createElement('div');
     cont_btn2.classList.add('btns-nuevo');
     const btn2 = document.createElement('button');
-    btn2.classList.add('btn');
+    btn2.classList.add('btn', 'btn-agregar');
     btn2.innerHTML= `
         Agregar 
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" 
@@ -179,6 +180,18 @@ function crearTarjetaCatalogo(libros){
     `;
     tarjeta.appendChild(cont_btn2);
     cont_btn2.appendChild(btn2);
+
+    //Agregar evento al btn de agregar
+    btn2.addEventListener('click', ()=>{
+        let carrito =JSON.parse(localStorage.getItem('carrito')) || [];
+
+        //agregamos el libro donde estamos
+        carrito.push(libros);
+
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        window.location.href = 'src/pages/compras.html';
+    });
 
     return tarjeta;
 
@@ -268,3 +281,131 @@ function crearModal(libros, idmodal){
     });
 
 }
+
+// ================================
+// SECCIÓN DE LA PÁGINA COMPRAS
+// ================================
+// SECCIÓN DE LA PÁGINA COMPRAS
+
+document.addEventListener('DOMContentLoaded', () => {
+  const compras = document.querySelector('.compras');
+  if (!compras) return;
+
+  const contPago = compras.querySelector('.cont-pago');
+  const totalGeneralElem = contPago?.querySelector('p');
+
+  let lista = compras.querySelector('.lista-compras');
+  if (!lista) {
+    lista = document.createElement('div');
+    lista.className = 'lista-compras';
+    const contPago = compras.querySelector('.cont-pago');
+    compras.insertBefore(lista, contPago || null);
+  }
+
+  // Cargar carrito
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  lista.innerHTML = '';
+
+  carrito.forEach((libro, index) => {
+    const contenedor = document.createElement('div');
+    contenedor.classList.add('contenedor-compras');
+
+    const precioUnitario = libro.Precio - (libro.Precio * libro.Descuento / 100);
+
+    contenedor.innerHTML = `
+      <div class="compra-item">
+        <div class="image-compra">
+          <img src="${libro.img}" alt="${libro.alt}">
+        </div>
+
+        <div class="info-compra">
+          <div class="info1">
+            <h3>${libro.Nombre}</h3>
+            <p>Precio: $${libro.Precio}</p>
+            <p>Descuento: ${libro.Descuento}%</p>
+          </div>
+
+          <div class="info2">
+            <p class="total">Total: $${precioUnitario.toFixed(2)}</p>
+          </div>
+
+          <div class="contendeor-cant">
+            <input type="number" class="cantidad" min="1" value="1" max="99" />
+          </div>
+
+          <div class="logo-borrar" title="Eliminar del carrito" data-index="${index}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 
+              10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 
+              1-1.994-1.84L2.038 3.5H1.5a.5.5 
+              0 0 1 0-1H5v-1A1.5 1.5 0 0 1 
+              6.5 0h3A1.5 1.5 0 0 1 11 
+              1.5m-5 0v1h4v-1a.5.5 0 0 
+              0-.5-.5h-3a.5.5 0 0 0-.5.5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    `;
+
+    contenedor.dataset.precioUnitario = precioUnitario;
+    contenedor.dataset.cantidad = 1;
+    lista.appendChild(contenedor);
+  });
+
+  // Función para calcular el total general
+  function calcularTotalGeneral() {
+    let total = 0;
+    lista.querySelectorAll('.contenedor-compras').forEach(cont => {
+      const precioUnitario = parseFloat(cont.dataset.precioUnitario);
+      const cantidad = parseInt(cont.dataset.cantidad);
+      total += precioUnitario * cantidad;
+    });
+    if (totalGeneralElem) {
+      totalGeneralElem.textContent = `$${total.toFixed(2)}`;
+    }
+  }
+
+  calcularTotalGeneral();
+
+  // 🔹 Cambio de cantidad
+  lista.addEventListener('input', (e) => {
+    const input = e.target.closest('.cantidad');
+    if (!input) return;
+
+    const cont = input.closest('.contenedor-compras');
+    const precioUnitario = parseFloat(cont.dataset.precioUnitario) || 0;
+    const cantidad = Math.max(1, parseInt(input.value) || 1);
+    cont.dataset.cantidad = cantidad;
+
+    if (input.max) {
+      const max = parseInt(input.max);
+      if (cantidad > max) input.value = max;
+    }
+
+    const nuevoTotal = precioUnitario * cantidad;
+    const totalElem = cont.querySelector('.total');
+    if (totalElem) totalElem.textContent = `Total: $${nuevoTotal.toFixed(2)}`;
+
+    calcularTotalGeneral();
+  });
+
+  // 🔹 Borrar item (✅ ahora dentro del DOMContentLoaded)
+  lista.addEventListener('click', (e) => {
+    const btnBorrar = e.target.closest('.logo-borrar');
+    if (!btnBorrar) return;
+
+    const index = parseInt(btnBorrar.dataset.index);
+    if (Number.isFinite(index)) {
+      carrito.splice(index, 1);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+      const nodo = btnBorrar.closest('.contenedor-compras');
+      if (nodo) nodo.remove();
+
+      lista.querySelectorAll('.logo-borrar').forEach((el, i) => el.dataset.index = i);
+      calcularTotalGeneral();
+    }
+  });
+
+});

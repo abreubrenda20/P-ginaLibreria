@@ -11,7 +11,7 @@
         "Editorial" : "Penguin Random House",
         "Categoria" : "Terror",
         "Año edicion" : "2019",
-        "img": "img/Terror/it.webp",
+        "img": "/P-ginaLibreria/img/Terror/it.webp",
         "alt": "Imagen libro It"
     },
     
@@ -27,7 +27,7 @@
         "Editorial": "Planeta",
         "Categoria": "Romance",
         "Año de edición": "2009",
-        "img": "img/Romance/El tiempo entre costuras.jpg ",
+        "img": "/P-ginaLibreria/img/Romance/El tiempo entre costuras.jpg ",
         "alt": "Imagen libro El teimpo entre costuras"
     },
 
@@ -43,7 +43,7 @@
         "Editorial": "Kiwi (Penguin Random House)",
         "Categoria": "Romance",
         "Año de edición": "2022",
-        "img":"img/Romance/La teoría de los archipiélagos.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/La teoría de los archipiélagos.jpg", 
         "alt": "Imagen libro El teimpo entre costuras"
     },
     {
@@ -58,7 +58,7 @@
         "Editorial": "Montena",
         "Categoria": "Romance",
         "Año de edición": "2014",
-        "img":"img/Romance/A todos los chicos de los que me enamoré.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/A todos los chicos de los que me enamoré.jpg", 
         "alt": "Imagen libro A todos los chicos de los que me enamoré"
     },
     {
@@ -73,7 +73,7 @@
         "Editorial": "Roca (Traducción española)",
         "Categoria": "Romance",
         "Año de edición": "2000", 
-        "img":"img/Romance/El cuaderno de noha.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/El cuaderno de noha.jpg", 
         "alt": "Imagen libro El cuaderno de noha"
     },
         
@@ -91,7 +91,7 @@
         "Editorial": "Planeta",
         "Categoria": "Romance",
         "Año de edición": "2018", 
-        "img":"img/Romance/Un día de diciembre.jpg ", 
+        "img":"/P-ginaLibreria/img/Romance/Un día de diciembre.jpg ", 
         "alt": "Imagen libro Un día de diciembre" 
 
     },
@@ -107,7 +107,7 @@
         "Editorial": "Oveja Negra / Vintage Español",
         "Categoria": "Romance",
         "Año de edición": "1985",
-        "img":"img/Romance/El amor en los tiempos de cólera.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/El amor en los tiempos de cólera.jpg", 
         "alt": "Imagen libro El amor en tiempos de cólera" 
  
 
@@ -124,7 +124,7 @@
         "Editorial": "Suma / Ediciones B",
         "Categoria": "Romance",
         "Año de edición": "2004", 
-        "img":"img/Romance/Posdata Te quiero.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/Posdata Te quiero.jpg", 
         "alt": "Imagen libro Posdata te quiero" 
  
     },
@@ -140,7 +140,7 @@
         "Editorial": "Penguin Random House",
         "Categoria": "Romance",
         "Año de edición": "2020",
-         "img":"img/Romance/Un cuento perfecto.jpg", 
+         "img":"/P-ginaLibreria/img/Romance/Un cuento perfecto.jpg", 
         "alt": "Imagen libro Un cuento perfecto" 
  
     },
@@ -156,7 +156,7 @@
         "Editorial": "Montena",
         "Categoria": "Romance",
         "Año de edición": "2024",
-        "img":"img/Romance/Etéreo.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/Etéreo.jpg", 
         "alt": "Imagen libro Etéreo" 
  
     },
@@ -172,7 +172,7 @@
         "Editorial": "Planeta",
         "Categoria": "Romance",
         "Año de edición": "2006",
-        "img":"img/Romance/Pasiones griegas.jpg", 
+        "img":"/P-ginaLibreria/img/Romance/Pasiones griegas.jpg", 
         "alt": "Imagen libro Pasiones griegas" 
   
     }, 
@@ -197,7 +197,7 @@
         "Editorial": "Los Libros de la Catarata",
         "Categoria": "Ciencia",
         "Año de edición": "2010", 
-        "img":"img/Ciencia/Terremotos, cuando la tierra tiembla.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/Terremotos, cuando la tierra tiembla.jpg", 
         "alt": "Imagen libro Terremotos, cuando la teirra tiembla" 
    
     },
@@ -214,7 +214,7 @@
         "Editorial": "Guadalmazán Almuzara",
         "Categoria": "Ciencia",
         "Año de edición": "2023", 
-        "img":"img/Ciencia/Drogas, fármacos y venenos.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/Drogas, fármacos y venenos.jpg", 
         "alt": "Imagen libro Drogas, fármacos y venenos" 
   
     },
@@ -230,7 +230,7 @@
         "Editorial": "Guadalmazán – Almuzara",
         "Categoria": "Ciencia",
         "Año de edición": "2018", 
-        "img":"img/Ciencia/Criptografia.webp", 
+        "img":"/P-ginaLibreria/img/Ciencia/Criptografia.webp", 
         "alt": "Imagen libro Criptografia" 
   
         
@@ -247,7 +247,7 @@
         "Editorial": "Crítica",
         "Categoria": "Ciencia",
         "Año de edición": "2009", 
-        "img":"img/Ciencia/El jardin de newton.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/El jardin de newton.jpg", 
         "alt": "Imagen libro El jardin de newton" 
    
     },
@@ -263,7 +263,7 @@
         "Editorial": "Tusquets Editores",
         "Categoria": "Ciencia",
         "Año de edición": "2015",
-        "img":"img/Ciencia/larealidad.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/larealidad.jpg", 
         "alt": "Imagen libro La realidad no es lo que parece" 
    
     },
@@ -279,7 +279,7 @@
         "Editorial": "Anagrama",
         "Categoria": "Ciencia",
         "Año de edición": "2016", 
-        "img":"img/Ciencia/Siete breves lecciones de fisica.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/Siete breves lecciones de fisica.jpg", 
         "alt": "Imagen libro Siete breves lecciones de fisica " 
    
     },
@@ -295,7 +295,7 @@
         "Editorial": "Herder (Barcelona)",
         "Categoria": "Ciencia",
         "Año de edición": "2019", 
-        "img":"img/Ciencia/y si el tiempo no existiera.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/y si el tiempo no existiera.jpg", 
         "alt": "Imagen libro y si el timepo no existiera" 
    
     },
@@ -311,7 +311,7 @@
         "Editorial": "UNAM",
         "Categoria": "Ciencia",
         "Año de edición": "2007", 
-        "img":"img/Ciencia/Números y estrellas mayas.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/Números y estrellas mayas.jpg", 
         "alt": "Imagen libro Números y estrellas mayas. " 
    
     },
@@ -327,7 +327,7 @@
         "Editorial": "Fondo de Cultura Económica",
         "Categoria": "Ciencia",
         "Año de edición": "2009", 
-        "img":"img/Ciencia/Nanociencia.webp", 
+        "img":"/P-ginaLibreria/img/Ciencia/Nanociencia.webp", 
         "alt": "Imagen libro Nanociencia y nanotecnología " 
    
     },
@@ -343,7 +343,7 @@
         "Editorial": "Debate",
         "Categoria": "Ciencia",
         "Año de edición": "2020", 
-        "img":"img/Ciencia/A vivir la ciencia.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia/A vivir la ciencia.jpg", 
         "alt": "Imagen libro A vivir la ciencia" 
    
     },
@@ -366,7 +366,7 @@
         "Editorial": "Planeta",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2025",
-        "img":"img/Ciencia-Ficción/Expediente hermes.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/Expediente hermes.jpg", 
         "alt": "Imagen libro Expediente hermes" 
    
     },
@@ -382,7 +382,7 @@
         "Editorial": "Impedimenta",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2025", 
-        "img":"img/Ciencia-Ficción/Solaris.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/Solaris.jpg", 
         "alt": "Imagen libro Solaris" 
     
     },
@@ -398,7 +398,7 @@
         "Editorial": "Minotauro",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2019", 
-        "img":"img/Ciencia-Ficción/La mano izquierda de la oscuridad.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/La mano izquierda de la oscuridad.jpg", 
         "alt": "Imagen libro La mano izquierda de la oscuridad" 
     
     },
@@ -414,7 +414,7 @@
         "Editorial": "Gigamesh Omnium",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2025", 
-        "img":"img/Ciencia-Ficción/Las estrellas mi destino.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/Las estrellas mi destino.jpg", 
         "alt": "Imagen libro Las estrellas mi destino " 
    
     },
@@ -430,7 +430,7 @@
         "Editorial": "Gaspar y Rimbau",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "1887", 
-        "img":"img/Ciencia-Ficción/El anacronópete.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/El anacronópete.jpg", 
         "alt": "Imagen libro El anacronópete" 
     
     },
@@ -446,7 +446,7 @@
         "Editorial": "Literatura Prospectiva",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2010", 
-        "img":"img/Ciencia-Ficción/feral.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/feral.jpg", 
         "alt": "Imagen libro Feral" 
     
     },
@@ -462,7 +462,7 @@
         "Editorial": "Universidad Estatal a Distancia de Costa Rica",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2013", 
-        "img":"img/Ciencia-Ficción/deus ex machina.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/deus ex machina.jpg", 
         "alt": "Imagen libro Deus ex machina" 
     
     },
@@ -478,7 +478,7 @@
         "Editorial": "Minotauro",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2010", 
-        "img":"img/Ciencia-Ficción/la ciudad y la ciudad.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/la ciudad y la ciudad.jpg", 
         "alt": "Imagen libro La ciudad y la ciudad " 
     
     },
@@ -494,7 +494,7 @@
         "Editorial": "Debolsillo",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2010", 
-        "img":"img/Ciencia-Ficción/Trilogia de la fundacion.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/Trilogia de la fundacion.jpg", 
         "alt": "Imagen libro Trilogia de la fundacion" 
     
     },
@@ -510,7 +510,7 @@
         "Editorial": "Debolsillo",
         "Categoria": "Ciencia-Ficción",
         "Año de edición": "2019", 
-        "img":"img/Ciencia-Ficción/Fahrenheit 451.jpg", 
+        "img":"/P-ginaLibreria/img/Ciencia-Ficción/Fahrenheit 451.jpg", 
         "alt": "Imagen libro Fahrenheit 451" 
     
     },
@@ -533,7 +533,7 @@
         "Editorial": "Marvel (Marvel Masterworks)",
         "Categoria": "Marvel",
         "Año de edición": "1987", 
-        "img":"img/Marvel/The Amazing Spider-Man Masterworks Vol. 1.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/The Amazing Spider-Man Masterworks Vol. 1.jpg", 
         "alt": "Imagen libro The Amazing Spider-Man Masterworks Vol. 1" 
 
     },
@@ -549,7 +549,7 @@
         "Editorial": "Marvel Masterworks",
         "Categoria": "Marvel",
         "Año de edición": "1987", 
-        "img":"img/Marvel/Fantastic Four Masterworks Vol. 1.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/Fantastic Four Masterworks Vol. 1.jpg", 
         "alt": "Imagen libro Fantastic Four Masterworks Vol. 1" 
 
     },
@@ -565,7 +565,7 @@
         "Editorial": "Marvel Masterworks",
         "Categoria": "Marvel",
         "Año de edición": "1987", 
-        "img":"img/Marvel/xmen.webp", 
+        "img":"/P-ginaLibreria/img/Marvel/xmen.webp", 
         "alt": "Imagen libro X-Men Masterworks Vol. 1"  
         
     },
@@ -581,7 +581,7 @@
         "Editorial": "Marvel Masterworks",
         "Categoria": "Marvel",
         "Año de edición": "1988", 
-        "img":"img/Marvel/Avengers Masterworks Vol. 1.webp", 
+        "img":"/P-ginaLibreria/img/Marvel/Avengers Masterworks Vol. 1.webp", 
         "alt": "Imagen libro Avengers Masterworks Vol. 1"  
          
 
@@ -598,7 +598,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Marvel",
         "Año de edición": "2010", 
-        "img":"img/Marvel/Official Index to the Marvel Universe Iron Man.jpeg", 
+        "img":"/P-ginaLibreria/img/Marvel/Official Index to the Marvel Universe Iron Man.jpeg", 
         "alt": "Imagen libro Official Index to the Marvel Universe: Iron Man"  
 
     },
@@ -614,7 +614,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Marvel",
         "Año de edición": "2010", 
-        "img":"img/Marvel/spiderman.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/spiderman.jpg", 
         "alt": "Imagen libro Official Index to the Marvel Universe: The Amazing Spider-Man" 
 
     },
@@ -630,7 +630,7 @@
         "Editorial": "Panini (edición integral vol. 1 de 8)",
         "Categoria": "Marvel",
         "Año de edición": "2025", 
-        "img":"img/Marvel/Fantastic Four de John Byrne.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/Fantastic Four de John Byrne.jpg", 
         "alt": "Imagen libro Fantastic Four de John Byrne" 
 
 
@@ -647,7 +647,7 @@
         "Editorial": "Marvel (collección Guardianes de la Galaxia)",
         "Categoria": "Marvel",
         "Año de edición": "2016", 
-        "img":"img/Marvel/guardianes.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/guardianes.jpg", 
         "alt": "Imagen libro Guardians of the Galaxy: New Guard Vol.1 Emperor Quill" 
 
 
@@ -664,7 +664,7 @@
         "Editorial": "Marvel",
         "Categoria": "Marvel",
         "Año de edición": "2015", 
-        "img":"img/Marvel/guardianes2.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/guardianes2.jpg", 
         "alt": "Imagen libro Guardians Team-Up Vol. 1"   
  
 
@@ -681,7 +681,7 @@
         "Editorial": "Marvel / Panini",
         "Categoria": "Marvel",
         "Año de edición": "2010", 
-        "img":"img/Marvel/Siege.jpg", 
+        "img":"/P-ginaLibreria/img/Marvel/Siege.jpg", 
         "alt": "Imagen libro Siege"    
         
     },
@@ -704,7 +704,7 @@
         "Editorial": "Marvel",
         "Categoria": "Comic-Terror",
         "Año de edición": "1972", 
-        "img":"img/Comic-Terror/dracula.webp", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/dracula.webp", 
         "alt": "Imagen libro La Tumba de Drácula - Vol. 1 (Marvel Essentials)"   
 
     },
@@ -720,7 +720,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Comic-Terror",
         "Año de edición": "2005",
-        "img":"img/Comic-Terror/Marvel Zombies (Vol. 1).jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/Marvel Zombies (Vol. 1).jpg", 
         "alt": "Imagen libro Marvel Zombies (Vol. 1)"   
 
     },
@@ -736,7 +736,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Comic-Terror",
         "Año de edición": "1980",
-        "img":"img/Comic-Terror/newmutans.jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/newmutans.jpg", 
         "alt": "Imagen libro The New Mutants: Demon Bear"   
 
     },
@@ -752,7 +752,7 @@
         "Editorial": "Marvel Deluxe",
         "Categoria": "Comic-Terror",
         "Año de edición": "1990", 
-        "img":"img/Comic-Terror/spiderman.jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/spiderman.jpg", 
         "alt": "Imagen libro Spider-Man: Tormento y Máscara"  
 
     },
@@ -768,7 +768,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Comic-Terror",
         "Año de edición": "2016",
-        "img":"img/Comic-Terror/Moon Knight (Max Bemis run).jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/Moon Knight (Max Bemis run).jpg", 
         "alt": "Imagen libro Moon Knight (Max Bemis run)"   
 
     },
@@ -784,7 +784,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Comic-Terror",
         "Año de edición": "2018", 
-        "img":"img/Comic-Terror/Immortal Hulk.jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/Immortal Hulk.jpg", 
         "alt": "Imagen libro Immortal Hulk"   
 
     },
@@ -800,7 +800,7 @@
         "Editorial": "Marvel",
         "Categoria": "Comic-Terror",
         "Año de edición": "1991", 
-        "img":"img/Comic-Terror/wolverine.jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/wolverine.jpg", 
         "alt": "Imagen libro Wolverine: Weapon X"   
     },
     {
@@ -815,7 +815,7 @@
         "Editorial": "Marvel Graphic Novel",
         "Categoria": "Comic-Terror",
         "Año de edición": "1989", 
-        "img":"img/Comic-Terror/Doctor Strange & Doctor DoomM Triunfo y Tormento.jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/Doctor Strange & Doctor DoomM Triunfo y Tormento.jpg", 
         "alt": "Imagen libro Doctor Strange & Doctor DoomM Triunfo y Tormento"  
     },
     {
@@ -830,7 +830,7 @@
         "Editorial": "Marvel Comics",
         "Categoria": "Comic-Terror",
         "Año de edición": "2011", 
-        "img":"img/Comic-Terror/Fear Itself (El Miedo Mismo).jpg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/Fear Itself (El Miedo Mismo).jpg", 
         "alt": "Imagen libro Fear Itself (El Miedo Mismo)"   
     },
     {
@@ -845,7 +845,7 @@
         "Editorial": "Magazine Management",
         "Categoria": "Comic-Terror",
         "Año de edición": "1973", 
-        "img":"img/Comic-Terror/Tales of the Zombie.jpeg", 
+        "img":"/P-ginaLibreria/img/Comic-Terror/Tales of the Zombie.jpeg", 
         "alt": "Imagen libro Tales of the Zombie"   
     },
     
@@ -861,7 +861,7 @@
         "Editorial": "Alma Clásicos",
         "Categoria": "Terror",
         "Año de edición": "2021",
-        "img": "img/Terror/dracula.webp",
+        "img": "/P-ginaLibreria/img/Terror/dracula.webp",
         "alt": "Imagen libro Drácula"
     },
     {
@@ -876,7 +876,7 @@
         "Editorial": "Alma Clásicos",
         "Categoria": "Terror",
         "Año de edición": "2022",
-        "img": "img/Terror/frank.webp",
+        "img": "/P-ginaLibreria/img/Terror/frank.webp",
         "alt": "Imagen libro Frankenstein"
     },
     {
@@ -891,7 +891,7 @@
         "Editorial": "Plaza & Janés",
         "Categoria": "Terror",
         "Año de edición": "2019",
-        "img": "img/Terror/exorcista.webp",
+        "img": "/P-ginaLibreria/img/Terror/exorcista.webp",
         "alt": "Imagen libro El exorcista"
     },
     {
@@ -906,7 +906,7 @@
         "Editorial": "Alma",
         "Categoria": "Terror",
         "Año de edición": "2020",
-        "img": "img/Terror/llamada.webp",
+        "img": "/P-ginaLibreria/img/Terror/llamada.webp",
         "alt": "Imagen libro La llamada de Cthulhu y otros cuentos"
     },
     {
@@ -921,7 +921,7 @@
         "Editorial": "Minotauro",
         "Categoria": "Terror",
         "Año de edición": "2018",
-        "img": "img/Terror/casaInfernal.webp",
+        "img": "/P-ginaLibreria/img/Terror/casaInfernal.webp",
         "alt": "Imagen libro La casa infernal"
     },
     {
@@ -936,7 +936,7 @@
         "Editorial": "Nocturna Ediciones",
         "Categoria": "Terror",
         "Año de edición": "2019",
-        "img": "img/Terror/hex.webp",
+        "img": "/P-ginaLibreria/img/Terror/hex.webp",
         "alt": "Imagen libro Hex"
     },
     {
@@ -951,7 +951,7 @@
         "Editorial": "Lumen",
         "Categoria": "Terror",
         "Año de edición": "2019",
-        "img": "img/Terror/hillHouse.webp",
+        "img": "/P-ginaLibreria/img/Terror/hillHouse.webp",
         "alt": "Imagen libro La maldición de Hill House"
     },
     {
@@ -966,7 +966,7 @@
         "Editorial": "Debolsillo",
         "Categoria": "Terror",
         "Año de edición": "2021",
-        "img": "img/Terror/cementerio.webp",
+        "img": "/P-ginaLibreria/img/Terror/cementerio.webp",
         "alt": "Imagen libro Cementerio de animales"
     },
     {
@@ -981,7 +981,7 @@
         "Editorial": "Minotauro",
         "Categoria": "Terror",
         "Año de edición": "2020",
-        "img": "img/Terror/ritual.webp",
+        "img": "/P-ginaLibreria/img/Terror/ritual.webp",
         "alt": "Imagen libro El ritual"
     },
     
@@ -997,7 +997,7 @@
         "Editorial": "Plaza & Janés",
         "Categoria": "Fantasía",
         "Año de edición": "2019",
-        "img": "img/Fantasía/nombreViento.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/nombreViento.webp",
         "alt": "Imagen libro El nombre del viento"
     },
     {
@@ -1012,7 +1012,7 @@
         "Editorial": "Minotauro",
         "Categoria": "Fantasía",
         "Año de edición": "2021",
-        "img": "img/Fantasía/señorAnillos.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/señorAnillos.webp",
         "alt": "Imagen libro El señor de los anillos: La comunidad del anillo"
     },
     {
@@ -1027,7 +1027,7 @@
         "Editorial": "Gigamesh",
         "Categoria": "Fantasía",
         "Año de edición": "2018",
-        "img": "img/Fantasía/juegoTronos.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/juegoTronos.webp",
         "alt": "Imagen libro Juego de tronos"
     },
     {
@@ -1042,7 +1042,7 @@
         "Editorial": "Salamandra",
         "Categoria": "Fantasía",
         "Año de edición": "2020",
-        "img": "img/Fantasía/harryPoter.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/harryPoter.webp",
         "alt": "Imagen libro Harry Potter y la piedra filosofal"
     },
     {
@@ -1057,7 +1057,7 @@
         "Editorial": "Roca Editorial",
         "Categoria": "Fantasía",
         "Año de edición": "2019",
-        "img": "img/Fantasía/brujulaDorada.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/brujulaDorada.webp",
         "alt": "Imagen libro La brújula dorada"
     },
     {
@@ -1072,7 +1072,7 @@
         "Editorial": "Alfaguara",
         "Categoria": "Fantasía",
         "Año de edición": "2021",
-        "img": "img/Fantasía/historia.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/historia.webp",
         "alt": "Imagen libro La historia interminable"
     },
     {
@@ -1087,7 +1087,7 @@
         "Editorial": "Hidra",
         "Categoria": "Fantasía",
         "Año de edición": "2022",
-        "img": "img/Fantasía/principeCruel.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/principeCruel.webp",
         "alt": "Imagen libro El príncipe cruel"
     },
     {
@@ -1102,7 +1102,7 @@
         "Editorial": "Salamandra",
         "Categoria": "Fantasía",
         "Año de edición": "2018",
-        "img": "img/Fantasía/coraline.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/coraline.webp",
         "alt": "Imagen libro Coraline"
     },
     {
@@ -1117,7 +1117,7 @@
         "Editorial": "Salamandra",
         "Categoria": "Fantasía",
         "Año de edición": "2020",
-        "img": "img/Fantasía/oceano.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/oceano.webp",
         "alt": "Imagen libro El océano al final del camino"
     },
     {
@@ -1132,7 +1132,7 @@
         "Editorial": "Ediciones B",
         "Categoria": "Fantasía",
         "Año de edición": "2021",
-        "img": "img/Fantasía/elantris.webp",
+        "img": "/P-ginaLibreria/img/Fantasía/elantris.webp",
         "alt": "Imagen libro Elantris"
     },
     
@@ -1148,7 +1148,7 @@
         "Editorial": "Alma Clásicos",
         "Categoria": "Literatura",
         "Año de edición": "2020",
-        "img": "img/Literatura/crimen.webp",
+        "img": "/P-ginaLibreria/img/Literatura/crimen.webp",
         "alt": "Imagen libro Crimen y castigo"
     },
     {
@@ -1163,7 +1163,7 @@
         "Editorial": "Alma Clásicos",
         "Categoria": "Literatura",
         "Año de edición": "2021",
-        "img": "img/Literatura/orgullo.webp",
+        "img": "/P-ginaLibreria/img/Literatura/orgullo.webp",
         "alt": "Imagen libro Orgullo y prejuicio"
     },
     {
@@ -1178,7 +1178,7 @@
         "Editorial": "Cátedra",
         "Categoria": "Literatura",
         "Año de edición": "2020",
-        "img": "img/Literatura/rayuela.webp",
+        "img": "/P-ginaLibreria/img/Literatura/rayuela.webp",
         "alt": "Imagen libro Rayuela"
     },
     {
@@ -1193,7 +1193,7 @@
         "Editorial": "Alfaguara",
         "Categoria": "Literatura",
         "Año de edición": "2019",
-        "img": "img/Literatura/donQuijote.webp",
+        "img": "/P-ginaLibreria/img/Literatura/donQuijote.webp",
         "alt": "Imagen libro Don Quijote de la Mancha"
     },
     {
@@ -1208,7 +1208,7 @@
         "Editorial": "Lumen",
         "Categoria": "Literatura",
         "Año de edición": "2021",
-        "img": "img/Literatura/ficciones.webp",
+        "img": "/P-ginaLibreria/img/Literatura/ficciones.webp",
         "alt": "Imagen libro Ficciones"
     },
     {
@@ -1223,7 +1223,7 @@
         "Editorial": "Alma Clásicos",
         "Categoria": "Literatura",
         "Año de edición": "2022",
-        "img": "img/Literatura/madameBovary.webp",
+        "img": "/P-ginaLibreria/img/Literatura/madameBovary.webp",
         "alt": "Imagen libro Madame Bovary"
     },
     {
@@ -1238,7 +1238,7 @@
         "Editorial": "Austral",
         "Categoria": "Literatura",
         "Año de edición": "2021",
-        "img": "img/Literatura/metamorfosis.webp",
+        "img": "/P-ginaLibreria/img/Literatura/metamorfosis.webp",
         "alt": "Imagen libro La metamorfosis"
     },
     {
@@ -1253,7 +1253,7 @@
         "Editorial": "Fondo de Cultura Económica",
         "Categoria": "Literatura",
         "Año de edición": "2020",
-        "img": "img/Literatura/pedroParamo.webp",
+        "img": "/P-ginaLibreria/img/Literatura/pedroParamo.webp",
         "alt": "Imagen libro Pedro Páramo"
     },
     {
@@ -1268,7 +1268,7 @@
         "Editorial": "Alma Clásicos",
         "Categoria": "Literatura",
         "Año de edición": "2022",
-        "img": "img/Literatura/cumbres.webp",
+        "img": "/P-ginaLibreria/img/Literatura/cumbres.webp",
         "alt": "Imagen libro Cumbres borrascosas"
     },
     {
@@ -1283,7 +1283,7 @@
         "Editorial": "Alfaguara",
         "Categoria": "Literatura",
         "Año de edición": "2019",
-        "img": "img/Literatura/laTregua.webp",
+        "img": "/P-ginaLibreria/img/Literatura/laTregua.webp",
         "alt": "Imagen libro La tregua"
     },
     
@@ -1299,7 +1299,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2019",
-        "img": "img/dc/batmananio.webp",
+        "img": "/P-ginaLibreria/img/dc/batmananio.webp",
         "alt": "Imagen cómic Batman Año Uno"
     },
     {
@@ -1314,7 +1314,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2020",
-        "img": "img/dc/superman.webp",
+        "img": "/P-ginaLibreria/img/dc/superman.webp",
         "alt": "Imagen cómic Superman Hijo Rojo"
     },
     {
@@ -1329,7 +1329,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2021",
-        "img": "img/dc/bromaAsesina.webp",
+        "img": "/P-ginaLibreria/img/dc/bromaAsesina.webp",
         "alt": "Imagen cómic La Broma Asesina"
     },
     {
@@ -1344,7 +1344,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2018",
-        "img": "img/dc/wonder.webp",
+        "img": "/P-ginaLibreria/img/dc/wonder.webp",
         "alt": "Imagen cómic Wonder Woman Blood"
     },
     {
@@ -1359,7 +1359,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2020",
-        "img": "img/dc/flash.webp",
+        "img": "/P-ginaLibreria/img/dc/flash.webp",
         "alt": "Imagen cómic Flashpoint"
     },
     {
@@ -1374,7 +1374,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2019",
-        "img": "img/dc/greenLantern.webp",
+        "img": "/P-ginaLibreria/img/dc/greenLantern.webp",
         "alt": "Imagen cómic Green Lantern Secret Origin"
     },
     {
@@ -1389,7 +1389,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2020",
-        "img": "img/dc/batmanSilencio.webp",
+        "img": "/P-ginaLibreria/img/dc/batmanSilencio.webp",
         "alt": "Imagen cómic Batman Silencio"
     },
     {
@@ -1404,7 +1404,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2019",
-        "img": "img/dc/aquamam.webp",
+        "img": "/P-ginaLibreria/img/dc/aquamam.webp",
         "alt": "Imagen cómic Aquaman The Trench"
     },
     {
@@ -1419,7 +1419,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2020",
-        "img": "img/dc/shazam.webp",
+        "img": "/P-ginaLibreria/img/dc/shazam.webp",
         "alt": "Imagen cómic Shazam Origins"
     },
     {
@@ -1434,7 +1434,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2019",
-        "img": "img/dc/ligaJusticia.webp",
+        "img": "/P-ginaLibreria/img/dc/ligaJusticia.webp",
         "alt": "Imagen cómic Justice League Origin"
     },
     {
@@ -1449,7 +1449,7 @@
         "Editorial": "DC Comics",
         "Categoria": "DC",
         "Año de edición": "2021",
-        "img": "img/dc/catwoman.webp",
+        "img": "/P-ginaLibreria/img/dc/catwoman.webp",
         "alt": "Imagen cómic Catwoman Trail of the Catwoman"
     },
     
@@ -1465,7 +1465,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2013",
-        "img": "img/Manga/dragonballz.webp",
+        "img": "/P-ginaLibreria/img/Manga/dragonballz.webp",
         "alt": "Imagen manga Dragon Ball Z Vol 1"
     },
     {
@@ -1480,7 +1480,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2011",
-        "img": "img/Manga/naruto.webp",
+        "img": "/P-ginaLibreria/img/Manga/naruto.webp",
         "alt": "Imagen manga Naruto Vol 1"
     },
     {
@@ -1495,7 +1495,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2005",
-        "img": "img/Manga/hunter.webp",
+        "img": "/P-ginaLibreria/img/Manga/hunter.webp",
         "alt": "Imagen manga Hunter x Hunter Vol 1"
     },
     {
@@ -1510,7 +1510,7 @@
         "Editorial": "Panini Manga",
         "Categoria": "Manga",
         "Año de edición": "2020",
-        "img": "img/Manga/caballerosZodiaco.webp",
+        "img": "/P-ginaLibreria/img/Manga/caballerosZodiaco.webp",
         "alt": "Imagen manga Los Caballeros del Zodiaco Vol 1"
     },
     {
@@ -1525,7 +1525,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2009",
-        "img": "img/Manga/pokemon.webp",
+        "img": "/P-ginaLibreria/img/Manga/pokemon.webp",
         "alt": "Imagen manga Pokemon Adventures Vol 1"
     },
     {
@@ -1540,7 +1540,7 @@
         "Editorial": "Panini Manga",
         "Categoria": "Manga",
         "Año de edición": "2018",
-        "img": "img/Manga/supercampeones.webp",
+        "img": "/P-ginaLibreria/img/Manga/supercampeones.webp",
         "alt": "Imagen manga Supercampeones Vol 1"
     },
     {
@@ -1555,7 +1555,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2014",
-        "img": "img/Manga/onepiece.webp",
+        "img": "/P-ginaLibreria/img/Manga/onepiece.webp",
         "alt": "Imagen manga One Piece Vol 1"
     },
     {
@@ -1570,7 +1570,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2015",
-        "img": "img/Manga/heroacademic.webp",
+        "img": "/P-ginaLibreria/img/Manga/heroacademic.webp",
         "alt": "Imagen manga My Hero Academia Vol 1"
     },
     {
@@ -1585,7 +1585,7 @@
         "Editorial": "Kodansha Comics",
         "Categoria": "Manga",
         "Año de edición": "2012",
-        "img": "img/Manga/attacktitan.webp",
+        "img": "/P-ginaLibreria/img/Manga/attacktitan.webp",
         "alt": "Imagen manga Attack on Titan Vol 1"
     },
     {
@@ -1600,7 +1600,7 @@
         "Editorial": "VIZ Media",
         "Categoria": "Manga",
         "Año de edición": "2018",
-        "img": "img/Manga/demon.webp",
+        "img": "/P-ginaLibreria/img/Manga/demon.webp",
         "alt": "Imagen manga Demon Slayer Vol 1"
     },
     {
@@ -1615,7 +1615,7 @@
         "Editorial": "Kodansha Comics",
         "Categoria": "Manga",
         "Año de edición": "2021",
-        "img": "img/Manga/tokyo.webp",
+        "img": "/P-ginaLibreria/img/Manga/tokyo.webp",
         "alt": "Imagen manga Tokyo Revengers Vol 1"
     }
 

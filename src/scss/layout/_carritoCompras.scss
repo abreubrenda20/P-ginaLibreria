@@ -1,166 +1,243 @@
 @use 'base/variables' as v;
 
 .compras {
-  padding: 2rem;
+  padding: 3rem 2rem;
   font-family: "Poppins", sans-serif;
+  background-color: lighten(v.$sectionNavBar, 45%);
 
   h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: v.$textoPrincipal;
-    margin-bottom: 2rem;
+    color: v.$sectionNavBar;
+    margin-bottom: 2.5rem;
   }
 
+  // ==========================
+  // 🛒 Contenedor principal del producto
   .contenedor-compras {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    margin: 2rem auto;
-    width: 93%;
-    max-height: 230px;
-    background-color: #fff;
-    border: 1.5px solid lighten(v.$button, 20%);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: v.$fondo;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem auto;
+    width: 95%;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
-    /* Imagen del producto */
-    .image-compra {
-      flex: 0 0 15%;
-      max-width: 180px;
-      height: 32vh;
+    // ==========================
+    // 💳 Contenido del producto (imagen + info)
+    .compra-item {
       display: flex;
-      justify-content: center;
-      align-items: center;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-    }
-
-    /* Información del producto */
-    .info-compra {
-      display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      flex: 1;
-      gap: 1.2rem;
-      padding: 1rem;
+      gap: 2rem;
 
-      .info1 {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0.5rem;
-
-        h3 {
-          margin: 0;
-          padding: 0;
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: v.$textoPrincipal;
-        }
-
-        p {
-          margin: 0.3rem 0;
-          color: darken(v.$textoPrincipal, 20%);
-          font-size: 1rem;
-        }
-
-        .descuento {
-          color: v.$button;
-          font-weight: 700;
-          font-size: 0.9rem;
-        }
-      }
-
-      .info2 {
-        flex: 1;
-        text-align: center;
-        font-weight: 600;
-        color: v.$textoPrincipal;
-        font-size: 1.1rem;
-      }
-
-      .contendeor-cant {
-        width: 90px;
-
-        input {
-          width: 100%;
-          border: 1.5px solid v.$button;
-          padding: 0.4rem;
-          border-radius: 6px;
-          text-align: center;
-          font-size: 1rem;
-          color: v.$textoPrincipal;
-          transition: all 0.3s ease;
-
-          &:focus {
-            outline: none;
-            border-color: darken(v.$button, 10%);
-            box-shadow: 0 0 5px fade-out(v.$button, 0.5);
-          }
-        }
-      }
-
-      .logo-borrar {
+      /* Imagen del producto */
+      .image-compra {
+        flex: 0 0 160px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        svg {
-          width: 28px;
-          height: 30px;
-          color: #666;
-          cursor: pointer;
-          transition: all 0.3s ease;
+        img {
+          width: 150px;
+          height: 210px;
+          object-fit: cover;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s ease;
 
           &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      /* Información del producto */
+      .info-compra {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+
+        .info1 {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+
+          h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: v.$sectionNavBar;
+          }
+
+          p {
+            font-size: 1rem;
+            color: darken(v.$sectionNavBar, 15%);
+          }
+
+          .descuento {
+            background-color: lighten(v.$button, 40%);
             color: v.$button;
-            transform: scale(1.1);
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-weight: 600;
+            width: fit-content;
+          }
+        }
+
+        .info2 {
+          flex: 1;
+          text-align: center;
+          font-weight: 600;
+          color: v.$sectionNavBar;
+          font-size: 1.1rem;
+        }
+
+        .contendeor-cant {
+          width: 85px;
+
+          input {
+            width: 100%;
+            border: 2px solid lighten(v.$button, 10%);
+            border-radius: 8px;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: v.$sectionNavBar;
+            background-color: lighten(v.$buttonHover, 30%);
+            transition: all 0.3s ease;
+
+            &:focus {
+              outline: none;
+              border-color: v.$button;
+              box-shadow: 0 0 8px fade-out(v.$button, 0.6);
+              background-color: #fff;
+            }
+          }
+        }
+
+        .logo-borrar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            width: 26px;
+            height: 26px;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: v.$button;
+              transform: scale(1.2);
+            }
           }
         }
       }
     }
   }
 
-  /* 📱 Responsive */
-  @media (max-width: 900px) {
-    .contenedor-compras {
-      flex-direction: column;
-      text-align: center;
-      max-height: none;
+  // ==========================
+  // 💰 Contenedor de pago (total general)
+  .cont-pago {
+    margin-top: 3rem;
+    padding: 1.8rem 2.5rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lighten(v.$fondo, 2%);
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-family: "Poppins", sans-serif;
+    border: 1.5px solid lighten(v.$buttonHover, 10%);
+    transition: all 0.3s ease;
 
-      .image-compra {
-        width: 50%;
-        height: auto;
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: v.$sectionNavBar;
+    }
+
+    p {
+      margin-top: 0.4rem;
+      font-size: 1.05rem;
+      color: darken(v.$sectionNavBar, 10%);
+    }
+
+    .btn-compra {
+      background-color: v.$button;
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        background-color: v.$sectionNavBar;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
-      .info-compra {
-        flex-direction: column;
-        gap: 1rem;
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+    }
 
-        .info1,
-        .info2 {
-          width: 100%;
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+
+      .btn-compra {
+        width: 80%;
+      }
+    }
+  }
+
+  // ==========================
+  // 📱 Responsive ajustes
+  @media (max-width: 900px) {
+    .contenedor-compras {
+      .compra-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+
+        .image-compra img {
+          width: 120px;
+          height: 170px;
+        }
+
+        .info-compra {
+          flex-direction: column;
+          gap: 1.2rem;
         }
       }
     }
@@ -174,10 +251,6 @@
     .contenedor-compras {
       width: 95%;
       padding: 1rem;
-    }
-
-    .image-compra img {
-      max-width: 140px;
     }
 
     .info1 h3 {
