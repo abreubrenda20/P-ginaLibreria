@@ -1,4 +1,54 @@
 let todosLosLibros = [];
+let todosLosComics = []; 
+//Función obtener json de comics
+function obtenerJSONcomics(){
+    fetch('data/comics.json')
+    .then((responde)=> responde.json())
+    .then((comics) =>{
+        todosLosComics = comics;
+        mostrarComics(comics, 'catalogo');
+
+    })
+    .catch((error)=>
+    console.log('Error Cargando json', error)
+    );
+        
+    
+}
+function mostrarComics(comics, contenedorID){
+    const contenedor = document.getElementById(contenedorID);
+    contenedor.innerHTML = ``;
+    comics.forEach((comics) =>{
+        const tarjetaComics = crearTarjetaComic(comics);
+        contenedor.appendChild(tarjetaComics);
+    })
+}
+ 
+function crearTarjetaComic(comics){
+    const tarjeta = document.createElement('div'); 
+    tarjeta.classList.add('sec-comic')
+    tarjeta.innerHTML = ` 
+        <div class="cont-img">
+                <img src="/P-ginaLibreria/img/Marvel/Avengers Masterworks Vol. 1.webp" alt="">
+
+
+            </div>
+            <div class="inf-comic">
+
+                <h2>Nombre:</h2>
+                <p>Autor: </p>
+                <p>Precio: </p>
+                <p>No. Páginas:</p>
+            </div>
+            <div class="cont-btn">
+                <button class="btn btn-comic"> Más </button>
+                <button class="btn btn-comic"> Agregar </button>
+            </div>
+    `;
+    return tarjeta;
+}
+
+
 //variable para pagina comic
 const paneles = document.querySelectorAll('.opPanel');
 const modal = document.getElementById('modal');
@@ -76,8 +126,9 @@ function removeActivePanel() {
         panel.classList.remove('active');
     });
 }
-
+//main
 document.addEventListener('DOMContentLoaded', function () {
+    obtenerJSONcomics();
     obtenerJSON();
     obtenerJSONSucursal();
 });

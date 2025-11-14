@@ -1,0 +1,29 @@
+.cont-cards{
+    background-color: aqua;
+    width: 96%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .sec-comic{
+        width: 50%;
+        .cont-img{
+            width: 100%;
+            img{
+                width: 100%;
+
+
+            }
+
+        }
+        .inf-comic{
+            h2{
+
+            }
+            p{
+
+            }
+
+        }
+
+    }
+}
