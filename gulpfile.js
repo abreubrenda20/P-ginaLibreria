@@ -5,7 +5,8 @@ import gulpSass from 'gulp-sass'
 const sass= gulpSass(dartSass)
 
 export function js(done){
-    src('src/js/app.js')
+
+    src('src/js/**/*.js')
     .pipe(dest('build/js'))
     done()
 }
