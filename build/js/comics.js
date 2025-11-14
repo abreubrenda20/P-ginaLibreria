@@ -4,7 +4,7 @@ console.log('Hola Mundo')
 
 function obtenerJSONcomics(){
     console.log('Hola Mundo')
-    fetch('data/comics.json')
+    fetch('../data/comics.json')
     .then((responde)=> responde.json())
     .then((comics) =>{
         todosLosComics = comics;
