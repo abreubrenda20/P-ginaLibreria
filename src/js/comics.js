@@ -1,6 +1,9 @@
 let todosLosComics = []; 
+console.log('Hola Mundo')
 //Función obtener json de comics
+
 function obtenerJSONcomics(){
+    console.log('Hola Mundo')
     fetch('data/comics.json')
     .then((responde)=> responde.json())
     .then((comics) =>{
