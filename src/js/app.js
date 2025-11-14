@@ -29,16 +29,16 @@ function crearTarjetaComic(comics){
     tarjeta.classList.add('sec-comic')
     tarjeta.innerHTML = ` 
         <div class="cont-img">
-                <img src="/P-ginaLibreria/img/Marvel/Avengers Masterworks Vol. 1.webp" alt="">
+                <img src="${comics.img}" alt="${comics.alt}">
 
 
             </div>
             <div class="inf-comic">
 
-                <h2>Nombre:</h2>
-                <p>Autor: </p>
-                <p>Precio: </p>
-                <p>No. Páginas:</p>
+                <h2>Nombre: ${comics.Nombre}</h2>
+                <p>Autor: ${comics.Autor}</p>
+                <p>Precio: ${comics.Precio} </p>
+                 <p>No. Páginas: ${comics['No.Paginas']}</p>
             </div>
             <div class="cont-btn">
                 <button class="btn btn-comic"> Más </button>
