@@ -24,7 +24,9 @@
         filter: blur(5px); /* Aquí sí se aplica el desenfoque */
         z-index: -1;
     }
-    .contenedor {
+    .contenedor  {
+        position: relative;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,14 +34,18 @@
         margin: auto;
         gap: 1rem;
         .opPanel {
+
             flex: 2; /* todas empiezan con el mismo tamaño */
             height: 90vh;
             position: relative;
+            z-index: 1;
             border-radius: 20px;
             cursor: pointer;
             overflow: hidden;
             transition: flex 0.7s ease-in-out;
             padding: 1rem; /* animación suave */
+
+
 
             img {
                 width: 100%;
@@ -88,6 +94,10 @@
                 opacity: 1;
                 pointer-events: auto;
             }
+        }
+
+        .opPanel.active{
+            z-index: 10;
         }
     }
 }
