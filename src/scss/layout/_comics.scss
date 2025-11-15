@@ -60,7 +60,7 @@
                 color: white;
                 text-align: center;
                 opacity: 0; /* ocultos por defecto */
-                pointer-events: none;
+                pointer-events: auto;
                 transition: opacity 0.5s ease;
                 h1 {
                     font-size: 2rem;

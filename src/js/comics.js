@@ -4,7 +4,7 @@ console.log('Hola Mundo')
 
 function obtenerJSONcomics(){
     console.log('Hola Mundo')
-    fetch('../data/comics.json')
+    fetch('../../data/comics.json')
     .then((responde)=> responde.json())
     .then((comics) =>{
         todosLosComics = comics;
@@ -40,7 +40,7 @@ function crearTarjetaComic(comics){
                 <h2>Nombre: ${comics.Nombre}</h2>
                 <p>Autor: ${comics.Autor}</p>
                 <p>Precio: ${comics.Precio} </p>
-                 <p>No. Páginas: ${comics['No.Paginas']}</p>
+                <p>No. Páginas: ${comics['No.Paginas']}</p>
             </div>
             <div class="cont-btn">
                 <button class="btn btn-comic"> Más </button>
@@ -50,6 +50,44 @@ function crearTarjetaComic(comics){
     return tarjeta;
 }
 
+//Desactivar panel
+
+function activarPanel (index){
+    const panel = document.querySelectorAll(".opPanel");
+    panel.forEach((p,i)=>{
+        if(i === index){
+            p.classList.add("active");
+        }else{
+            p.classList.remove("active");
+        }
+    })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     obtenerJSONcomics();
+
+    document.getElementById("btn-marvel").addEventListener("click", ()=>{
+        activarPanel(0);
+        mostrarComics(todosLosComics.filter(c => c.Categoria === "Marvel"),"catalogo");
+
+    });
+
+    document.getElementById("btn-dc").addEventListener("click", () =>{
+        activarPanel(1);
+        mostrarComics(todosLosComics.filter (c => c.Categoria === "DC"), "catalogo");
+    }); 
+
+    document.getElementById("btn-manga").addEventListener("click", () =>{
+        activarPanel(2);
+        mostrarComics(todosLosComics.filter ( c => c.Categoria === "Manga"), "catalogo");
+    });
+
+    document.getElementById("btn-r").addEventListener("click", () =>{
+        activarPanel(3);
+        mostrarComics(todosLosComics.filter ( c => c.Categoria === "Comic-Terror"), "catalogo");
+    });
+
+
 })
+
+
