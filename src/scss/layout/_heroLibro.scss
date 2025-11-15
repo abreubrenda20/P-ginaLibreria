@@ -1,4 +1,5 @@
 @use 'base/variables' as v;
+@use 'base/mixins' as m;
 .heroLibro {
     margin: 2rem;
     height: 100vh;
@@ -8,6 +9,7 @@
     align-items: center;
     .libro {
         display: flex;
+
         box-shadow: 5px 8px 5px #573701;
         input {
             display: none;
@@ -54,6 +56,7 @@
                         rgba(0, 0, 0, 0.5);
                     h1,
                     h3 {
+                        width: 100%;
                         color: v.$button;
                     }
                 }
@@ -97,6 +100,9 @@
         color: white;
     }
 }
+.back-btn {
+    left: 2rem;
+}
 
 #p1 {
     z-index: 4;
@@ -125,4 +131,43 @@
 #c4:checked ~ .paginas #p4 {
     transform: rotateY(-180deg);
     z-index: 4;
+}
+
+//Diseño responsivo
+@include m.telefono {
+    .heroLibro {
+        height: 70vh;
+    }
+    .libro {
+        width: 100%;
+        .pagina-info {
+            padding: 10px;
+            font-size: 0.7rem;
+        }
+
+        .next-btn,
+        .back-btn {
+            width: 50px;
+            font-size: 0.8rem;
+            bottom: 8px;
+        }
+    }
+}
+@include m.tablet {
+    .heroLibro {
+        height: 60vh;
+    }
+    .libro {
+        width: 100%;
+        .pagina-info {
+            padding: 10px;
+            font-size: 1rem;
+        }
+        .next-btn,
+        .back-btn {
+            width: 50px;
+            font-size: 0.8rem;
+            bottom: 8px;
+        }
+    }
 }

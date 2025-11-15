@@ -1,6 +1,7 @@
 let todosLosLibros = [];
 
-
+const menuHamburguesa = document.getElementById('menu-hamburguesa');
+const menuLinks = document.getElementById('menu-links');
 
 //variable para pagina comic
 const paneles = document.querySelectorAll('.opPanel');
@@ -54,12 +55,12 @@ function mostrarSucursal() {
         `;
     texto.innerHTML = `
             <h2>${s.nombresucursa}</h2>
-            <p>${s.direccion}</p>
-            <p>${s.pais}</p>
-            <p>${s.cp}</p>
-            <p>${s.delegacion}</p>
-            <p>${s.correo}</p>
-            <p>${s.telefono}</p>
+            <p> <span>Dirección: </span> ${s.direccion}</p>
+            <p> <span>Pais: </span> ${s.pais}</p>
+            <p> <span>Código postal: </span> ${s.cp}</p>
+            <p> <span>Delegación: </span> ${s.delegacion}</p>
+            <p> <span>Correo: </span> ${s.correo}</p>
+            <p> <span>Teléfono: </span> ${s.telefono}</p>
         
         `;
 }
@@ -81,7 +82,9 @@ function removeActivePanel() {
 }
 //main
 document.addEventListener('DOMContentLoaded', function () {
-    obtenerJSONcomics();
+    menuHamburguesa.addEventListener('click', () => {
+        menuLinks.classList.toggle('show');
+    });
     obtenerJSON();
     obtenerJSONSucursal();
 });
@@ -188,7 +191,7 @@ function crearPaginador(libros, contenedorID) {
     });
     paginador.appendChild(btnSiguiente);
 
-    // ✅ Insertar justo debajo del catálogo
+    //Insertar justo debajo del catálogo
     contenedor.insertAdjacentElement('afterend', paginador);
 }
 
@@ -438,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calcularTotalGeneral();
 
-    // 🔹 Cambio de cantidad
+    //Cambio de cantidad
     lista.addEventListener('input', (e) => {
         const input = e.target.closest('.cantidad');
         if (!input) return;
@@ -461,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
         calcularTotalGeneral();
     });
 
-    // 🔹 Borrar item (✅ ahora dentro del DOMContentLoaded)
+    // Borrar item
     lista.addEventListener('click', (e) => {
         const btnBorrar = e.target.closest('.logo-borrar');
         if (!btnBorrar) return;

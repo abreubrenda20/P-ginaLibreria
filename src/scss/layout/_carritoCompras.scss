@@ -1,260 +1,256 @@
 @use 'base/variables' as v;
+@use 'base/mixins' as m;
 
 .compras {
-  padding: 3rem 2rem;
-  font-family: "Poppins", sans-serif;
-  background-color: lighten(v.$sectionNavBar, 45%);
+    padding: 3rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: lighten(v.$sectionNavBar, 45%);
 
-  h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: v.$sectionNavBar;
-    margin-bottom: 2.5rem;
-  }
-
-  // ==========================
-  // 🛒 Contenedor principal del producto
-  .contenedor-compras {
-    background-color: v.$fondo;
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    margin: 1.5rem auto;
-    width: 95%;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: v.$sectionNavBar;
+        margin-bottom: 2.5rem;
     }
 
-    // ==========================
-    // 💳 Contenido del producto (imagen + info)
-    .compra-item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
+    //Contenedor principal del producto
+    .contenedor-compras {
+        background-color: v.$fondo;
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        margin: 1.5rem auto;
+        width: 95%;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
 
-      /* Imagen del producto */
-      .image-compra {
-        flex: 0 0 160px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          width: 150px;
-          height: 210px;
-          object-fit: cover;
-          border-radius: 12px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-          transition: transform 0.3s ease;
-
-          &:hover {
-            transform: scale(1.05);
-          }
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-      }
+        //Contenido del producto
+        .compra-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
 
-      /* Información del producto */
-      .info-compra {
+            /* Imagen del producto */
+            .image-compra {
+                flex: 0 0 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 150px;
+                    height: 210px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            /* Información del producto */
+            .info-compra {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem;
+
+                .info1 {
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.6rem;
+
+                    h3 {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: v.$sectionNavBar;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: darken(v.$sectionNavBar, 15%);
+                    }
+
+                    .descuento {
+                        background-color: lighten(v.$button, 40%);
+                        color: v.$button;
+                        padding: 0.3rem 0.7rem;
+                        border-radius: 6px;
+                        font-weight: 600;
+                        width: fit-content;
+                    }
+                }
+
+                .info2 {
+                    flex: 1;
+                    text-align: center;
+                    font-weight: 600;
+                    color: v.$sectionNavBar;
+                    font-size: 1.1rem;
+                }
+
+                .contendeor-cant {
+                    width: 85px;
+
+                    input {
+                        width: 100%;
+                        border: 2px solid lighten(v.$button, 10%);
+                        border-radius: 8px;
+                        padding: 0.5rem;
+                        text-align: center;
+                        font-size: 1rem;
+                        color: v.$sectionNavBar;
+                        background-color: lighten(v.$buttonHover, 30%);
+                        transition: all 0.3s ease;
+
+                        &:focus {
+                            outline: none;
+                            border-color: v.$button;
+                            box-shadow: 0 0 8px fade-out(v.$button, 0.6);
+                            background-color: #fff;
+                        }
+                    }
+                }
+
+                .logo-borrar {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    svg {
+                        width: 26px;
+                        height: 26px;
+                        color: #999;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            color: v.$button;
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Contenedor de pago
+    .cont-pago {
+        margin-top: 3rem;
+        padding: 1.8rem 2.5rem;
+        width: 94%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: lighten(v.$fondo, 2%);
+        border-radius: 14px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         display: flex;
-        flex: 1;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         gap: 2rem;
+        font-family: 'Poppins', sans-serif;
+        border: 1.5px solid lighten(v.$buttonHover, 10%);
+        transition: all 0.3s ease;
 
-        .info1 {
-          flex: 2;
-          display: flex;
-          flex-direction: column;
-          gap: 0.6rem;
+        &:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
 
-          h3 {
-            font-size: 1.4rem;
+        span {
+            font-size: 1.2rem;
             font-weight: 700;
             color: v.$sectionNavBar;
-          }
+        }
 
-          p {
-            font-size: 1rem;
-            color: darken(v.$sectionNavBar, 15%);
-          }
+        p {
+            margin-top: 0.4rem;
+            font-size: 1.05rem;
+            color: darken(v.$sectionNavBar, 10%);
+        }
 
-          .descuento {
-            background-color: lighten(v.$button, 40%);
-            color: v.$button;
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
+        .btn-compra {
+            background-color: v.$button;
+            color: #fff;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
             font-weight: 600;
-            width: fit-content;
-          }
-        }
-
-        .info2 {
-          flex: 1;
-          text-align: center;
-          font-weight: 600;
-          color: v.$sectionNavBar;
-          font-size: 1.1rem;
-        }
-
-        .contendeor-cant {
-          width: 85px;
-
-          input {
-            width: 100%;
-            border: 2px solid lighten(v.$button, 10%);
-            border-radius: 8px;
-            padding: 0.5rem;
-            text-align: center;
             font-size: 1rem;
-            color: v.$sectionNavBar;
-            background-color: lighten(v.$buttonHover, 30%);
-            transition: all 0.3s ease;
-
-            &:focus {
-              outline: none;
-              border-color: v.$button;
-              box-shadow: 0 0 8px fade-out(v.$button, 0.6);
-              background-color: #fff;
-            }
-          }
-        }
-
-        .logo-borrar {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          svg {
-            width: 26px;
-            height: 26px;
-            color: #999;
+            letter-spacing: 0.5px;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 
             &:hover {
-              color: v.$button;
-              transform: scale(1.2);
+                background-color: v.$sectionNavBar;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
-          }
+
+            &:active {
+                transform: scale(0.98);
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            }
         }
-      }
     }
-  }
-
-  // ==========================
-  // 💰 Contenedor de pago (total general)
-  .cont-pago {
-    margin-top: 3rem;
-    padding: 1.8rem 2.5rem;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: lighten(v.$fondo, 2%);
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 2rem;
-    font-family: "Poppins", sans-serif;
-    border: 1.5px solid lighten(v.$buttonHover, 10%);
-    transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    span {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: v.$sectionNavBar;
-    }
-
-    p {
-      margin-top: 0.4rem;
-      font-size: 1.05rem;
-      color: darken(v.$sectionNavBar, 10%);
-    }
-
-    .btn-compra {
-      background-color: v.$button;
-      color: #fff;
-      border: none;
-      padding: 0.9rem 2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-
-      &:hover {
-        background-color: v.$sectionNavBar;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      &:active {
-        transform: scale(0.98);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    /* 📱 Responsive */
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1rem;
-
-      .btn-compra {
-        width: 80%;
-      }
-    }
-  }
-
-  // ==========================
-  // 📱 Responsive ajustes
-  @media (max-width: 900px) {
-    .contenedor-compras {
-      .compra-item {
+    //diseño responsivo tablet
+    @include m.tablet {
+        .contenedor-compras {
+            width: 89%;
+        }
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 2rem;
+        gap: 1rem;
+        .cont-pago {
+            display: flex;
+            flex-direction: column;
 
-        .image-compra img {
-          width: 120px;
-          height: 170px;
+            width: 89% !important;
         }
 
-        .info-compra {
-          flex-direction: column;
-          gap: 1.2rem;
+        .btn-compra {
+            width: 80%;
         }
-      }
-    }
-  }
-
-  @media (max-width: 600px) {
-    h2 {
-      font-size: 1.6rem;
     }
 
-    .contenedor-compras {
-      width: 95%;
-      padding: 1rem;
-    }
+    @include m.telefono {
+        .contenedor-compras {
+            width: 90% !important;
+            padding: 1rem;
+            .compra-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 2rem;
 
-    .info1 h3 {
-      font-size: 1.1rem;
+                .image-compra img {
+                    width: 120px;
+                    height: 170px;
+                }
+
+                .info-compra {
+                    flex-direction: column;
+                    gap: 1.2rem;
+                }
+            }
+        }
+        .cont-pago {
+            display: flex;
+            flex-direction: column;
+
+            width: 77% !important;
+        }
     }
-  }
 }
