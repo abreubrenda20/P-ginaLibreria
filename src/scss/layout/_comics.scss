@@ -1,8 +1,10 @@
 @use 'base/variables' as v;
+
 .cont_cards_comics {
     height: 100vh;
     width: 100%;
     background-size: contain;
+
     h1 {
         font-size: 2.8rem;
         margin-top: 2rem;
@@ -11,6 +13,7 @@
         font-family: v.$tituloComic;
         -webkit-text-stroke: 1px yellow;
     }
+
     &::before {
         content: '';
         position: absolute;
@@ -21,31 +24,30 @@
         background-image: url(/P-ginaLibreria/img/fondoComic/fondoComic.webp);
         background-size: cover;
         background-position: center;
-        filter: blur(5px); /* Aquí sí se aplica el desenfoque */
+        filter: blur(5px);
         z-index: -1;
     }
-    .contenedor  {
-        position: relative;
 
+    .contenedor {
+        position: relative;
+        overflow: visible;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 90vw;
         margin: auto;
         gap: 1rem;
-        .opPanel {
 
-            flex: 2; /* todas empiezan con el mismo tamaño */
+        .opPanel {
+            flex: 2;
             height: 90vh;
             position: relative;
-            z-index: 1;
             border-radius: 20px;
             cursor: pointer;
+            pointer-events: auto;
             overflow: hidden;
             transition: flex 0.7s ease-in-out;
-            padding: 1rem; /* animación suave */
-
-
+            padding: 1rem;
 
             img {
                 width: 100%;
@@ -53,24 +55,26 @@
                 object-fit: cover;
                 border-radius: 20px;
                 transition: transform 0.7s ease-in-out;
-                position: relative;
             }
-            /* Elementos superpuestos */
+
+            /* Overlay */
             .overlay {
                 position: absolute;
-                inset: 0; /* ocupa toda la tarjeta */
+                inset: 0;
                 display: flex;
                 flex-direction: column;
-                justify-content: end;
+                justify-content: flex-end;
                 align-items: center;
-                color: white;
                 text-align: center;
-                opacity: 0; /* ocultos por defecto */
-                pointer-events: auto;
+                color: white;
+                opacity: 0;
+                pointer-events: none !important; /* Desactivado por defecto */
                 transition: opacity 0.5s ease;
+
                 h1 {
                     font-size: 2rem;
                 }
+
                 button {
                     padding: 10px 20px;
                     border: none;
@@ -81,23 +85,22 @@
                     cursor: pointer;
                     transition: background 0.3s;
                     margin-bottom: 2rem;
+
                     &:hover {
                         background: darkred;
                     }
                 }
             }
-            &.active {
-                flex: 10; /* la tarjeta activa será más grande */
-            }
-            /* Solo se muestra cuando está active */
-            &.active .overlay {
-                opacity: 1;
-                pointer-events: auto;
-            }
-        }
 
-        .opPanel.active{
-            z-index: 10;
+            &.active {
+                flex: 10;
+                z-index: 5; /* Se eleva la tarjeta activa */
+
+                .overlay {
+                    opacity: 1;
+                    pointer-events: auto !important; /* AHORA SÍ RECIBE CLICS */
+                }
+            }
         }
     }
 }
