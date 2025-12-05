@@ -1,30 +1,77 @@
-import {src, dest,watch, series} from 'gulp'
-import * as dartSass from 'sass'
-import gulpSass from 'gulp-sass'
-//compilar con dartSass
-const sass= gulpSass(dartSass)
+import { src, dest, watch, series } from 'gulp';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 
-export function js(done){
+const sass = gulpSass(dartSass);
 
-    src('src/js/**/*.js')
-    .pipe(dest('build/js'))
-    done()
+// ======================
+// COPIAR HTML
+// ======================
+export function html(done) {
+    src('index.html').pipe(dest('build'));
+    done();
 }
-//funcion para calcular
-export function css(done ){
-    //encontrar la ubicacion de mi archivo
-    src('src/scss/app.scss', {sourcemaps: true})
-    //ubica el archivo y ejecuta el pipe
+
+// ======================
+// COPIAR PÁGINAS (pages/)
+// ======================
+export function pages(done) {
+    src('src/pages/**/*.html').pipe(dest('build/pages'));
+    done();
+}
+
+// ======================
+// COPIAR IMÁGENES (img/)
+// ======================
+export function images(done) {
+    src('img/**/*').pipe(dest('build/img'));
+    done();
+}
+
+// ======================
+// COPIAR DATA (data/)
+// ======================
+export function data(done) {
+    src('data/**/*').pipe(dest('build/data'));
+    done();
+}
+
+// ======================
+// JS
+// ======================
+export function js(done) {
+    src('src/js/**/*.js').pipe(dest('build/js'));
+    done();
+}
+
+// ======================
+// CSS (SASS)
+// ======================
+export function css(done) {
+    src('src/scss/app.scss', { sourcemaps: true })
         .pipe(sass().on('error', sass.logError))
-        //donde se almacenara
-        .pipe(dest('build/css', {sourcemaps: true}))
-    done()
+        .pipe(dest('build/css', { sourcemaps: true }));
+    done();
 }
 
-export function dev(){
-    //escucha archivos
-    //buscar todos los archivos que tengan la extension .scss
-    watch('src/scss/**/*.scss', css)
-    watch('src/js/**/*.js', js)
+// ======================
+// WATCH / DEV
+// ======================
+export function dev() {
+    watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', js);
+    watch('*.html', html);
+    watch('pages/**/*.html', pages);
+    watch('img/**/*', images);
+    watch('data/**/*', data);
 }
-export default series(js, css, dev)
+
+// ======================
+// TAREA BUILD FINAL
+// ======================
+export const build = series(html, pages, images, data, js, css);
+
+// ======================
+// TAREA DEFAULT (DEV)
+// ======================
+export default series(html, pages, images, data, js, css, dev);

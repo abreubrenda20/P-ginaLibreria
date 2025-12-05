@@ -1,0 +1,46 @@
+[
+  {
+    "nombresucursa": "Sucursal Centro Histórico",
+    "direccion": "Av. Reforma 123",
+    "pais": "México",
+    "cp": "06000",
+    "delegacion": "Cuauhtémoc",
+    "correo": "centrohistorico@empresa.com",
+    "telefono": "+52 55 1234 5678",
+    "img": "img/Sucursales/tienda1.webp",
+    "alt": "Sucursal Centro Histórico"
+  },
+  {
+    "nombresucursa": "Sucursal Bogotá Norte",
+    "direccion": "Calle 100 #45-67",
+    "pais": "Colombia",
+    "cp": "110221",
+    "delegacion": "Usaquén",
+    "correo": "bogotanorte@empresa.com",
+    "telefono": "+57 1 234 5678",
+    "img": "img/Sucursales/tienda2.webp",
+    "alt": "Sucursal Bogotá Norte"
+  },
+  {
+    "nombresucursa": "Sucursal Madrid Centro",
+    "direccion": "Calle Gran Vía 15",
+    "pais": "España",
+    "cp": "28013",
+    "delegacion": "Centro",
+    "correo": "madridcentro@empresa.com",
+    "telefono": "+34 91 123 4567",
+    "img": "img/Sucursales/tienda3.webp",
+    "alt": "Sucursal Madrid Centro"
+  },
+  {
+    "nombresucursa": "Sucursal San Juan",
+    "direccion": "Ave. Ponce de León 200",
+    "pais": "Puerto Rico",
+    "cp": "00907",
+    "delegacion": "Santurce",
+    "correo": "sanjuan@empresa.com",
+    "telefono": "+1 787 123 4567",
+    "img": "img/Sucursales/tienda4.webp",
+    "alt": "Sucursal San Juan"
+  }
+]
