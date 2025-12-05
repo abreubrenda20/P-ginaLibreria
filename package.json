@@ -1,30 +1,31 @@
 {
-  "name": "libreria",
-  "version": "1.0.0",
-  "description": "página de libros y cómics",
-  "main": "index.js",
-  "scripts": {
-    "sass": "sass src/scss:dist/css",
-    "dev": "gulp dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abreubrenda20/P-ginaLibreria.git"
-  },
-  "keywords": [
-    "SASS",
-    "NMP",
-    "Gulp"
-  ],
-  "author": "Brenda Abreu y Eduardo Piña",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/abreubrenda20/P-ginaLibreria/issues"
-  },
-  "homepage": "https://github.com/abreubrenda20/P-ginaLibreria#readme",
-  "devDependencies": {
-    "gulp": "^5.0.1",
-    "gulp-sass": "^6.0.1",
-    "sass": "^1.90.0"
-  }
+    "name": "libreria",
+    "version": "1.0.0",
+    "description": "página de libros y cómics",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass src/scss:dist/css",
+        "dev": "gulp",
+        "build": "gulp build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/abreubrenda20/P-ginaLibreria.git"
+    },
+    "keywords": [
+        "SASS",
+        "NMP",
+        "Gulp"
+    ],
+    "author": "Brenda Abreu y Eduardo Piña",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/abreubrenda20/P-ginaLibreria/issues"
+    },
+    "homepage": "https://github.com/abreubrenda20/P-ginaLibreria#readme",
+    "devDependencies": {
+        "gulp": "^5.0.1",
+        "gulp-sass": "^6.0.1",
+        "sass": "^1.90.0"
+    }
 }
