@@ -3,7 +3,6 @@
 .titulo-nuevo {
     margin: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-
     width: 96%;
     height: 100px;
     text-align: center;
@@ -63,7 +62,8 @@
             margin: auto;
         }
         .btn-agregar {
-            margin: auto;
+            margin-left: 25%;
+            margin-top: 1rem;
         }
     }
 }

@@ -1,8 +1,8 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 .heroLibro {
-    margin: 2rem;
-    height: 100vh;
+    margin-top: 7rem;
+    height: 90vh;
     background: linear-gradient(90deg, #fff 50%, v.$sectionHero 50%);
     display: flex;
     justify-content: center;
@@ -84,10 +84,14 @@
     position: absolute;
     bottom: 13px;
     right: 13px;
+
     cursor: pointer;
+    min-width: max-content;
+    padding: 8px 20px;
+    white-space: nowrap;
     color: v.$button;
     font-weight: 900;
-    padding: 5px;
+
     border-radius: 12px;
     background-color: v.$button;
     color: white;
@@ -136,7 +140,10 @@
 //Diseño responsivo
 @include m.telefono {
     .heroLibro {
-        height: 70vh;
+        height: 50vh;
+        margin-top: 14rem;
+        margin-bottom: 4rem;
+        padding: 1rem;
     }
     .libro {
         width: 100%;
@@ -151,6 +158,16 @@
             font-size: 0.8rem;
             bottom: 8px;
         }
+    }
+}
+
+//Diseño responsivo
+@include m.tablet {
+    .heroLibro {
+        height: 50vh;
+        margin-top: 10rem;
+        margin-bottom: 4rem;
+        padding: 1rem;
     }
 }
 @include m.tablet {

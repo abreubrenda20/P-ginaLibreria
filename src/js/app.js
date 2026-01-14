@@ -54,15 +54,16 @@ function mostrarSucursal() {
             <img src="${s.img}" alt="${s.alt}">
         `;
     texto.innerHTML = `
-            <h2>${s.nombresucursa}</h2>
-            <p> <span>Dirección: </span> ${s.direccion}</p>
-            <p> <span>Pais: </span> ${s.pais}</p>
-            <p> <span>Código postal: </span> ${s.cp}</p>
-            <p> <span>Delegación: </span> ${s.delegacion}</p>
-            <p> <span>Correo: </span> ${s.correo}</p>
-            <p> <span>Teléfono: </span> ${s.telefono}</p>
-        
-        `;
+<div class="info-inner">
+  <h2>${s.nombresucursa}</h2>
+  <p><span>Dirección:</span> ${s.direccion}</p>
+  <p><span>Pais:</span> ${s.pais}</p>
+  <p><span>Código postal:</span> ${s.cp}</p>
+  <p><span>Delegación:</span> ${s.delegacion}</p>
+  <p><span>Correo:</span> ${s.correo}</p>
+  <p><span>Teléfono:</span> ${s.telefono}</p>
+</div>
+`;
 }
 
 paneles.forEach((panel) => {

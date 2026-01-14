@@ -1,6 +1,7 @@
 @use 'base/variables' as v;
-.cont-modal{
-    width: 85%;
+@use 'base/mixins' as m;
+.cont-modal {
+    width: 90%;
     height: 90vh;
     background-color: v.$sectionNavBar;
     position: fixed;
@@ -12,130 +13,170 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     z-index: 999;
-    &.show{
+    &.show {
         display: flex;
         animation: fadeIn 0.3s ease-in-out;
-        
     }
-    .btn-cerrar{
+    .btn-cerrar {
         position: absolute;
-        top: .8rem;
+        top: 0.8rem;
         right: 1rem;
-        svg{
+        svg {
             width: 30px;
             height: 30px;
             color: white;
             cursor: pointer;
             transition: color 0.3s;
-            &:hover{
+            &:hover {
                 color: v.$button;
             }
         }
     }
-    .info1{
-        
+    .info1 {
         width: 90%;
         height: 40%;
         margin-top: 5rem;
         display: flex;
         gap: 2rem;
         flex-direction: row;
-        .cont-img{
+        .cont-img {
             width: 25%;
             height: 100%;
             border-radius: 16px;
-            img{
+            img {
                 width: 100%;
-                height: 100%;
+                height: 90%;
                 border-radius: 16px;
-                box-shadow: 0 0 12px rgba(0,0,0,0.3);
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
             }
         }
-        .cont-info{
-            
+        .cont-info {
             width: 65%;
             color: white;
-            padding: 2rem;
-            h1,h2{
+            padding: 1rem;
+            h1,
+            h2 {
                 color: white;
             }
-            span{
+            h2 {
+                font-size: 1.2rem;
+            }
+            span {
                 font-weight: 600;
                 color: #00d26a;
             }
         }
     }
-    .info2{
+    .info2 {
         width: 70%;
         display: flex;
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 40vh;
-        background: rgba(255,255,255,0.05);
-        border: 2px solid rgba(255,255,255,0.2);  
+        min-height: 50vh;
+        height: auto;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.2);
         border-radius: 16px;
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-        .cont-btn{
-            
+        margin-bottom: 5rem;
+
+        .cont-btn {
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            align-items: center;
             gap: 2rem;
-            .btn{
-                padding: 0.6rem 1.5rem;
+            .btn {
                 border: 3px solid #00d26a;
                 border-radius: 16px;
-                margin-top: 1rem;
-                font-size: 20px;
+                font-size: 1.2rem;
                 background: transparent;
                 color: white;
                 font-weight: 600;
                 transition: all 0.3s ease;
                 cursor: pointer;
-                &.active{
+                &.active {
                     background: #00d26a;
                     color: #1a1a1a;
                 }
             }
-
         }
-        .info-detallada{
-            height: 72%;
-            margin-top: 1rem;
-            border-top: 3px solid rgba(255, 255, 255, 0.237);;  
+        .info-detallada {
+            margin-top: 1.5rem;
+            border-top: 3px solid rgba(255, 255, 255, 0.237);
             padding: 1rem;
-            .seccion-info{
-                span{
+            .seccion-info {
+                span {
                     font-weight: 600;
                     color: #00d26a;
                 }
-                p{
+                p {
                     color: #f3f3f3;
-                    font-size: 25px;
-                    
+                    font-size: 1.3rem;
                     margin: 0.3rem 0;
-
                 }
             }
-            .seccion-sinop{
-                p{
+            .seccion-sinop {
+                p {
                     font-style: italic;
-                    font-size: 25px;
+                    font-size: 1.3rem;
                     color: #eee;
                     text-align: justify;
                     line-height: 1.5;
-
                 }
             }
-
-            }
-            
+        }
     }
 }
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -10%); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Diseño responsivo tablet */
+
+@include m.tablet {
+    .cont-modal {
+        height: 88vh;
+    }
+}
+@include m.telefono {
+    .cont-modal {
+        height: 90vh;
+        .info1 {
+            width: 100%;
+            gap: 1rem;
+            .cont-img {
+                width: 50%;
+                margin-top: 2rem;
+                margin-left: 10%;
+            }
+            .cont-info {
+                h1 {
+                    font-size: 1.3rem;
+                }
+                h2 {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+        .info2 {
+            width: 80%;
+            margin-top: 1rem;
+            .cont-btn {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+        }
+    }
 }
