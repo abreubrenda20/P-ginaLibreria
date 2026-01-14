@@ -20,7 +20,7 @@ let texto = document.getElementById('texto');
 let actual = 0;
 let sucursales = [];
 function obtenerJSONSucursal() {
-    fetch('data/sucursales.json')
+    fetch('/data/sucursales.json')
         //regresa una promesa
         .then((responde) => responde.json())
         .then((tiendas) => {
@@ -271,7 +271,7 @@ function crearTarjetaCatalogo(libros) {
 
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
-        window.location.href = 'src/pages/compras.html';
+        window.location.href = '/pages/compras.html';
     });
 
     return tarjeta;

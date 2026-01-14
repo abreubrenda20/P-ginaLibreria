@@ -5,7 +5,7 @@ import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 
 // ======================
-// COPIAR HTML
+// COPIAR HTML PRINCIPAL
 // ======================
 export function html(done) {
     src('index.html').pipe(dest('build'));
@@ -13,7 +13,7 @@ export function html(done) {
 }
 
 // ======================
-// COPIAR PÁGINAS (pages/)
+// COPIAR PÁGINAS
 // ======================
 export function pages(done) {
     src('src/pages/**/*.html').pipe(dest('build/pages'));
@@ -21,18 +21,17 @@ export function pages(done) {
 }
 
 // ======================
-// COPIAR IMÁGENES (img/)
+// IMÁGENES
 // ======================
-export function images(done) {
-    src('img/**/*').pipe(dest('build/img'));
-    done();
+export function images() {
+    return src('src/img/**/*', { encoding: false }).pipe(dest('build/img'));
 }
 
 // ======================
-// COPIAR DATA (data/)
+// DATA JSON
 // ======================
 export function data(done) {
-    src('data/**/*').pipe(dest('build/data'));
+    src('src/data/**/*').pipe(dest('build/data'));
     done();
 }
 
@@ -45,7 +44,7 @@ export function js(done) {
 }
 
 // ======================
-// CSS (SASS)
+// CSS
 // ======================
 export function css(done) {
     src('src/scss/app.scss', { sourcemaps: true })
@@ -55,23 +54,41 @@ export function css(done) {
 }
 
 // ======================
-// WATCH / DEV
+// DEV WATCH
 // ======================
 export function dev() {
     watch('src/scss/**/*.scss', css);
     watch('src/js/**/*.js', js);
-    watch('*.html', html);
-    watch('pages/**/*.html', pages);
-    watch('img/**/*', images);
-    watch('data/**/*', data);
+    watch('index.html', html);
+    watch('src/pages/**/*.html', pages);
+    watch('src/img/**/*', images);
+    watch('src/data/**/*', data);
 }
 
 // ======================
-// TAREA BUILD FINAL
+// BUILD FINAL
 // ======================
 export const build = series(html, pages, images, data, js, css);
 
 // ======================
-// TAREA DEFAULT (DEV)
+// DEFAULT
 // ======================
-export default series(html, pages, images, data, js, css, dev);
+
+import browserSync from 'browser-sync';
+const bs = browserSync.create();
+export function server(done) {
+    bs.init({
+        server: {
+            baseDir: 'build',
+        },
+    });
+
+    watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', js);
+    watch('src/index.html', html);
+    watch('src/pages/**/*.html', pages);
+    watch('src/img/**/*', images).on('change', bs.reload);
+    done();
+}
+
+export default series(build, server);
