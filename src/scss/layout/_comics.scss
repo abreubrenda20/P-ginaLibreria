@@ -1,4 +1,5 @@
 @use 'base/variables' as v;
+@use 'base/mixins' as m;
 
 .cont_cards_comics {
     height: 100vh;
@@ -22,7 +23,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url(/P-ginaLibreria/img/fondoComic/fondoComic.webp);
+        background-image: url(../../img/fondoComic/fondoComic.webp);
         background-size: cover;
         background-position: center;
         filter: blur(5px);
@@ -69,7 +70,7 @@
                 text-align: center;
                 color: white;
                 opacity: 0;
-                pointer-events: none !important; /* Desactivado por defecto */
+                pointer-events: none !important;
                 transition: opacity 0.5s ease;
 
                 h1 {
@@ -95,11 +96,28 @@
 
             &.active {
                 flex: 10;
-                z-index: 5; /* Se eleva la tarjeta activa */
+                z-index: 5;
 
                 .overlay {
                     opacity: 1;
-                    pointer-events: auto !important; /* AHORA SÍ RECIBE CLICS */
+                    pointer-events: auto !important;
+                }
+            }
+        }
+    }
+}
+@include m.telefono {
+    .cont_cards_comics {
+        height: auto;
+        .contenedor {
+            flex-direction: column;
+            .opPanel {
+                max-height: 280px;
+                width: 100%;
+                .overlay {
+                    h1 {
+                        font-size: 1rem !important;
+                    }
                 }
             }
         }
